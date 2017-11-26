@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-11-23T16:10:08.980Z</updated>
+  <updated>2017-11-26T01:42:48.520Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,19 +17,21 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>zhang</title>
+    <title></title>
     <link href="http://yoursite.com/2017/11/24/zhang/"/>
     <id>http://yoursite.com/2017/11/24/zhang/</id>
-    <published>2017-11-23T16:05:43.000Z</published>
-    <updated>2017-11-23T16:10:08.980Z</updated>
+    <published>2017-11-23T16:05:43.626Z</published>
+    <updated>2017-11-26T01:42:48.520Z</updated>
     
-    <content type="html"><![CDATA[<p>这是一片傻子写的文章。</p>]]></content>
+    <content type="html"><![CDATA[<hr><p>title: zhang<br>date: 2017-11-24 00:05:43<br>tags:随笔<br>categories:思考</p><p>这是一片傻子写的文章。</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;这是一片傻子写的文章。&lt;/p&gt;
+        &lt;hr&gt;
+&lt;p&gt;title: zhang&lt;br&gt;date: 2017-11-24 00:05:43&lt;br&gt;tags:随笔&lt;br&gt;categories:思考&lt;/p&gt;
+&lt;p&gt;这是一片傻子写的文章。&lt;/p&gt;
 
       
     

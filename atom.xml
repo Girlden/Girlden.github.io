@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-11-27T14:01:27.154Z</updated>
+  <updated>2017-12-12T03:47:13.467Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>datastruct</title>
+    <link href="http://yoursite.com/2017/12/12/datastruct/"/>
+    <id>http://yoursite.com/2017/12/12/datastruct/</id>
+    <published>2017-12-12T02:51:57.000Z</published>
+    <updated>2017-12-12T03:47:13.467Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="线性表"><a href="#线性表" class="headerlink" title="线性表"></a>线性表</h1><h2 id="顺序表示"><a href="#顺序表示" class="headerlink" title="顺序表示"></a>顺序表示</h2><p><strong>DestroyLis</strong>t是将线性表的所有内容释放。线性表有三个属性，分别是线性表的空间基址、当前内容的长度<strong>length</strong>以及分配的长度<strong>size</strong>。（这里分配的长度需要大于内容的长度）<strong>DestroyList</strong>是讲所有的属性抹去初始值。</p><p><strong>ClearList</strong>是将当前的内容长度置0。</p><p><strong>isEmpty</strong>则是通过内容长度来判断线性表是否为空。</p><p><strong>GetElem</strong>是将第i个元素取出来并返回。</p><p><strong>FindElem</strong>是将表中元素与查找元素相同的下标输出。</p><p>对应的还有插入、删除、访问、历遍等等。。。。。</p><h2 id="链式表示"><a href="#链式表示" class="headerlink" title="链式表示"></a>链式表示</h2><p>链式表示和顺序表示最大的不同就是，链式表示中逻辑位置相邻的数据他们需要物理位置也相邻。插入和删除不需要再将大量的数据做移动，减少算法的复杂度。</p><p>定义单链表时会有两个属性，1.数据，2.下一个节点的指针。</p><p>作业，编写代码<strong>实现链表反转和实现一元多项式的相加</strong>。</p><p>12/12/2017 11:46:54 AM </p><hr>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;线性表&quot;&gt;&lt;a href=&quot;#线性表&quot; class=&quot;headerlink&quot; title=&quot;线性表&quot;&gt;&lt;/a&gt;线性表&lt;/h1&gt;&lt;h2 id=&quot;顺序表示&quot;&gt;&lt;a href=&quot;#顺序表示&quot; class=&quot;headerlink&quot; title=&quot;顺序表示&quot;&gt;&lt;/a&gt;顺序表
+      
+    
+    </summary>
+    
+    
+      <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
   
   <entry>
     <title>datalearning</title>

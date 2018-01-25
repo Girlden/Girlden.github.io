@@ -2,44 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/2018/01/25/python%E7%88%AC%E8%99%AB/</loc>
+    <loc>http://yoursite.com/2017/11/27/%E8%80%83%E7%A0%94%E5%89%8D%E7%9A%84%E8%AF%BE%E7%A8%8B%E5%A4%8D%E4%B9%A0%E5%AE%89%E6%8E%92/</loc>
     
-    <lastmod>2018-01-25T15:08:20.894Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/tags/index.html</loc>
-    
-    <lastmod>2018-01-25T15:05:01.371Z</lastmod>
+    <lastmod>2018-01-25T16:51:34.418Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://yoursite.com/2018/01/24/%E5%AF%92%E5%81%87/</loc>
     
-    <lastmod>2018-01-23T16:36:55.944Z</lastmod>
+    <lastmod>2018-01-25T16:51:21.557Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/01/25/python%E7%88%AC%E8%99%AB/</loc>
+    
+    <lastmod>2018-01-25T16:51:07.584Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://yoursite.com/2017/12/12/datastruct/</loc>
     
-    <lastmod>2017-12-12T03:47:13.467Z</lastmod>
+    <lastmod>2018-01-25T16:50:49.224Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2017/11/27/datalearning/</loc>
+    <loc>http://yoursite.com/tags/tags.html</loc>
     
-    <lastmod>2017-11-27T14:01:27.154Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2017/11/27/%E8%80%83%E7%A0%94%E5%89%8D%E7%9A%84%E8%AF%BE%E7%A8%8B%E5%A4%8D%E4%B9%A0%E5%AE%89%E6%8E%92/</loc>
-    
-    <lastmod>2017-11-27T12:20:42.703Z</lastmod>
+    <lastmod>2018-01-25T15:58:37.457Z</lastmod>
     
   </url>
   
@@ -47,13 +40,6 @@
     <loc>http://yoursite.com/about/index.html</loc>
     
     <lastmod>2017-11-26T01:37:17.944Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/categories/index.html</loc>
-    
-    <lastmod>2017-11-26T01:30:14.279Z</lastmod>
     
   </url>
   

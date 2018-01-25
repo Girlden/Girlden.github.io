@@ -3,42 +3,22 @@
   <entry>
     <title><![CDATA[python爬虫（1）]]></title>
     <url>%2F2018%2F01%2F25%2Fpython%E7%88%AC%E8%99%AB%2F</url>
-    <content type="text"><![CDATA[今天来简单的学习一下爬取网页的文档，然后归档。 第一个简单的爬虫利用chrome F12的检查功能对网页的回应进行读取，这里以新浪网为例。 获取到这些信息后，我们就能够写出一下代码：12345import requestsnew_url = &apos;http://news.sina.com.cn/society/res = requests.get(new_url)res.encoding = &apos;utf-8&apos;print(res.text) 打印出来后表明没有问题，这是可以用到BeautifulSoup这个模块，讲刚才打印出来的东西丢进去，交给它处理，注意还需标明剖析器是html.parser。 12from bs4 import BeautifulSoupsoup = BeautifulSoup(res.text,&apos;html.parser&apos;) 我们可以知道，在res里有很多的标签，我们需要的文字藏在固定的标签中，所以我们下面要做的就是取出我们需要的标签，需要用到soup的select方法。 12soup2 = soup.select(&apos;h2&apos;)print(soup2) 结果如下，是一个列表。 但是我们要爬取的内容的标签是以不同的id和class来区分的，这里涉及到css的相关内容，我们暂且不谈。只需要知道我们需要通过网页的检查了解我们的新闻藏在什么杨种类的标签之下。 现在可以知道我们的内容在news-item的class之下，所以我们运用select(‘.news-item’)的方法去获取，同样的方法，我们又可以知道，新闻的标题在h标签下，新闻的时间在值time的class之下，链接在h2标签的href中，写出一下代码。12345678from bs4 import BeautifulSoupsoup = BeautifulSoup(res.text,&apos;html.parser&apos;)for link in soup.select(&apos;.news-item&apos;): if len(link.select(&apos;h2&apos;)) &gt; 0: h2 = link.select(&apos;h2&apos;)[0].text time = link.select(&apos;.time&apos;)[0].text href = link.select(&apos;a&apos;)[0][&apos;href&apos;] print(time,h2,href) 注：text取的是标签的文字内容，而[‘href’]取的是标签内部的值。 最终结果如下：]]></content>
-      <tags>
-        <tag>爬虫</tag>
-      </tags>
+    <content type="text"><![CDATA[今天来简单的学习一下爬取网页的文档，然后归档。 第一个简单的爬虫利用chrome F12的检查功能对网页的回应进行读取，这里以新浪网为例。 获取到这些信息后，我们就能够写出一下代码：12345import requestsnew_url = 'http://news.sina.com.cn/society/res = requests.get(new_url)res.encoding = 'utf-8'print(res.text) 打印出来后表明没有问题，这是可以用到BeautifulSoup这个模块，讲刚才打印出来的东西丢进去，交给它处理，注意还需标明剖析器是html.parser。 12from bs4 import BeautifulSoupsoup = BeautifulSoup(res.text,'html.parser') 我们可以知道，在res里有很多的标签，我们需要的文字藏在固定的标签中，所以我们下面要做的就是取出我们需要的标签，需要用到soup的select方法。 12soup2 = soup.select('h2')print(soup2) 结果如下，是一个列表。 但是我们要爬取的内容的标签是以不同的id和class来区分的，这里涉及到css的相关内容，我们暂且不谈。只需要知道我们需要通过网页的检查了解我们的新闻藏在什么杨种类的标签之下。 现在可以知道我们的内容在news-item的class之下，所以我们运用select(‘.news-item’)的方法去获取，同样的方法，我们又可以知道，新闻的标题在h标签下，新闻的时间在值time的class之下，链接在h2标签的href中，写出一下代码。12345678from bs4 import BeautifulSoupsoup = BeautifulSoup(res.text,'html.parser')for link in soup.select('.news-item'): if len(link.select('h2')) &gt; 0: h2 = link.select('h2')[0].text time = link.select('.time')[0].text href = link.select('a')[0]['href'] print(time,h2,href) 注：text取的是标签的文字内容，而[‘href’]取的是标签内部的值。 最终结果如下：]]></content>
   </entry>
   <entry>
     <title><![CDATA[寒假]]></title>
     <url>%2F2018%2F01%2F24%2F%E5%AF%92%E5%81%87%2F</url>
     <content type="text"><![CDATA[我不知道为什么要写这个东西，只是闲着无聊，有不想动笔写日记，反正也没有喜欢的本子，就把闲置的博客拿来用用吧，希望未来自己看到这个能够有所感触。 我在从南京回来的路上听到一则鼓励写作的的录音，说写作并不用很好好的文笔只需要保持一直写就可以了。对于这个观点，我相信，原因很简单，我没有文笔，又喜欢写点东西，决定坚持。 我现在懂了，不是只有难得的事情，做出来了才伟大，简单的事情坚持一直做也是件很了不起的。突然想起来我的高中化学课的老师曾经和我们讲过某企业老板要求自己的员工在每天某个时间点准时起来做一分钟的高抬腿，而且他们真正的做到了。一件事，做一天你可能回说没什么，做一周也还好，一个月很厉害，一年也还好，三年四年。。。你会怎么觉得，我看到一则介绍爱情的短视频，一个男生为自己喜欢的女生每天削一个苹果，坚持了2300天，他们没有吵过架。 从此刻开始，我要为了自己想过的生活儿努力，坚持写作，每天。就和每天吃饭睡觉一样。寒假放假之前，我加了一个学习理财的群，我发现，他们一只都在教我们理财的重要性，大家还在学的那么起劲，我再管网几天，看看又没有干货，有没有的话就退出吧。今天看完了爬虫的一段教程，我觉讲的很有条理，明天继续。]]></content>
-      <tags>
-        <tag>plan</tag>
-      </tags>
   </entry>
   <entry>
-    <title><![CDATA[datastruct]]></title>
+    <title><![CDATA[Datastruct]]></title>
     <url>%2F2017%2F12%2F12%2Fdatastruct%2F</url>
     <content type="text"><![CDATA[线性表顺序表示DestroyList是将线性表的所有内容释放。线性表有三个属性，分别是线性表的空间基址、当前内容的长度length以及分配的长度size。（这里分配的长度需要大于内容的长度）DestroyList是讲所有的属性抹去初始值。 ClearList是将当前的内容长度置0。 isEmpty则是通过内容长度来判断线性表是否为空。 GetElem是将第i个元素取出来并返回。 FindElem是将表中元素与查找元素相同的下标输出。 对应的还有插入、删除、访问、历遍等等。。。。。 链式表示链式表示和顺序表示最大的不同就是，链式表示中逻辑位置相邻的数据他们需要物理位置也相邻。插入和删除不需要再将大量的数据做移动，减少算法的复杂度。 定义单链表时会有两个属性，1.数据，2.下一个节点的指针。 作业，编写代码实现链表反转和实现一元多项式的相加。 12/12/2017 11:46:54 AM]]></content>
-      <tags>
-        <tag>数据结构</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[datalearning]]></title>
-    <url>%2F2017%2F11%2F27%2Fdatalearning%2F</url>
-    <content type="text"><![CDATA[第一次在网站上下载了临时数据，并且利用数据进行了简单的数据技术，将杂乱的数据进行分组，计数。]]></content>
-      <tags>
-        <tag>数据分析</tag>
-      </tags>
   </entry>
   <entry>
     <title><![CDATA[考研前的课程复习安排]]></title>
     <url>%2F2017%2F11%2F27%2F%E8%80%83%E7%A0%94%E5%89%8D%E7%9A%84%E8%AF%BE%E7%A8%8B%E5%A4%8D%E4%B9%A0%E5%AE%89%E6%8E%92%2F</url>
     <content type="text"><![CDATA[这学期可能是我大学期间的转折点，也将可能会是我大学阶段面对考试最困难的一个学期，因为我大三了，而且面临考验抉择，所以这个学期志在必得（一门都不许挂），下面是我最低限度的复习计划，针对每天整理出最少的复习量。 这学期的课程分为6门：通原，通线相对可以接受，交换，信息论，单片机，电磁场很难。 现在是第13周，距离考试还有4周不到的时间，我暂且粗略的估计是20天，还留七八天用来巩固。 通原一共13章，一天一章，从明天开始。 通线一共10章，一天一章，从明天开始。 电磁场一共8章，一天一章，从明天开始。 交换机一共11章，一天一章，从12月6日开始。 单片机一共11章，一天一章，从12月7日开始。 #信息论 #一共7章，一天一章，从12月11日开始。 这些课程除外还有一节毛概，一节通创，一节就业指导，以及一节实验。 综合起来将会有10门功课，加油吧，就这么多了。]]></content>
-      <tags>
-        <tag>life</tag>
-      </tags>
   </entry>
   <entry>
     <title><![CDATA[Hello World]]></title>

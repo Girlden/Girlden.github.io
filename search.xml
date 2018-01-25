@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[k]]></title>
+    <url>%2F2018%2F01%2F26%2Fk%2F</url>
+    <content type="text"><![CDATA[jj]]></content>
+      <tags>
+        <tag>j</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[python爬虫（1）]]></title>
     <url>%2F2018%2F01%2F25%2Fpython%E7%88%AC%E8%99%AB%2F</url>
     <content type="text"><![CDATA[今天来简单的学习一下爬取网页的文档，然后归档。 第一个简单的爬虫利用chrome F12的检查功能对网页的回应进行读取，这里以新浪网为例。 获取到这些信息后，我们就能够写出一下代码：12345import requestsnew_url = 'http://news.sina.com.cn/society/res = requests.get(new_url)res.encoding = 'utf-8'print(res.text) 打印出来后表明没有问题，这是可以用到BeautifulSoup这个模块，讲刚才打印出来的东西丢进去，交给它处理，注意还需标明剖析器是html.parser。 12from bs4 import BeautifulSoupsoup = BeautifulSoup(res.text,'html.parser') 我们可以知道，在res里有很多的标签，我们需要的文字藏在固定的标签中，所以我们下面要做的就是取出我们需要的标签，需要用到soup的select方法。 12soup2 = soup.select('h2')print(soup2) 结果如下，是一个列表。 但是我们要爬取的内容的标签是以不同的id和class来区分的，这里涉及到css的相关内容，我们暂且不谈。只需要知道我们需要通过网页的检查了解我们的新闻藏在什么杨种类的标签之下。 现在可以知道我们的内容在news-item的class之下，所以我们运用select(‘.news-item’)的方法去获取，同样的方法，我们又可以知道，新闻的标题在h标签下，新闻的时间在值time的class之下，链接在h2标签的href中，写出一下代码。12345678from bs4 import BeautifulSoupsoup = BeautifulSoup(res.text,'html.parser')for link in soup.select('.news-item'): if len(link.select('h2')) &gt; 0: h2 = link.select('h2')[0].text time = link.select('.time')[0].text href = link.select('a')[0]['href'] print(time,h2,href) 注：text取的是标签的文字内容，而[‘href’]取的是标签内部的值。 最终结果如下：]]></content>

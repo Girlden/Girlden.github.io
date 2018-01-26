@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-01-26T14:16:19.019Z</updated>
+  <updated>2018-01-26T14:57:49.291Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python爬虫（3）</title>
+    <link href="http://yoursite.com/2018/01/26/python%E7%88%AC%E8%99%AB%EF%BC%883%EF%BC%89/"/>
+    <id>http://yoursite.com/2018/01/26/python爬虫（3）/</id>
+    <published>2018-01-26T14:25:49.000Z</published>
+    <updated>2018-01-26T14:57:49.291Z</updated>
+    
+    <content type="html"><![CDATA[<p>之前的两节，我们把我们要的东西爬取下来，但是并没有做存储，下面我们将会讲解如何做存储。</p><h2 id="保存到Excel"><a href="#保存到Excel" class="headerlink" title="保存到Excel"></a>保存到Excel</h2><figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas</span><br><span class="line">df = pandas.DataFrame(<span class="keyword">final</span>)</span><br><span class="line">df.to_excel(<span class="string">'news.xlsx'</span>)</span><br></pre></td></tr></table></figure><p>这是就可以在我们的目录当中找到news.xlsx的文件。</p><h2 id="保存到数据库"><a href="#保存到数据库" class="headerlink" title="保存到数据库"></a>保存到数据库</h2><figure class="highlight xl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sqlite3</span><br><span class="line"><span class="keyword">with</span> sqlite3.connect(<span class="string">'news.sqlite'</span>) <span class="keyword">as</span> db:</span><br><span class="line">    df.to_sql(<span class="string">'news'</span>,con = db)</span><br></pre></td></tr></table></figure><p>可以利用pandas去sqlite中拿数据：<br><figure class="highlight sml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> sqlite3.connect(<span class="symbol">'news</span>.sqlite') <span class="keyword">as</span> db:</span><br><span class="line">    df2 = pandas.read_sql(<span class="symbol">'SELECT</span> * <span class="type">FROM</span> news',con = db)</span><br></pre></td></tr></table></figure></p><p>连上钱两次，就算是一个完整的爬虫过程了。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;之前的两节，我们把我们要的东西爬取下来，但是并没有做存储，下面我们将会讲解如何做存储。&lt;/p&gt;
+&lt;h2 id=&quot;保存到Excel&quot;&gt;&lt;a href=&quot;#保存到Excel&quot; class=&quot;headerlink&quot; title=&quot;保存到Excel&quot;&gt;&lt;/a&gt;保存到Excel&lt;/h
+      
+    
+    </summary>
+    
+      <category term="python" scheme="http://yoursite.com/categories/python/"/>
+    
+    
+      <category term="爬虫" scheme="http://yoursite.com/tags/%E7%88%AC%E8%99%AB/"/>
+    
+      <category term="数据库" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+  </entry>
   
   <entry>
     <title>python爬虫（2）</title>

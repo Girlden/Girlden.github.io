@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[module安装问题]]></title>
+    <url>%2F2018%2F01%2F29%2Fmodule%E5%AE%89%E8%A3%85%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[前言：由于我为了方便，开始就安装了Anaconda，所以很多模块都已经装好了，遇到没有的模块，我们可以用pip install +模块名字，但是有的时候也会出现问题。 wordcloud安装出错你会发现在cmd的输入命令 pip install wordcloud 时会报错。解决方法： 在以下这个网址http://link.zhihu.com/?target=http%3A//www.lfd.uci.edu/%7Egohlke/pythonlibs/%23lxml下载你需要的的对应版本模块。 接着，把下载下来的文件原封不动的拷贝到你pyhon或者Anaconda的Scripts中，我的就是F:\Anaconda\Scripts 再到cmd中执行pip install F:\Anaconda\Scripts\刚才的文件名 这样就能下载成功！]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>模块安装</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[python爬虫（3）]]></title>
     <url>%2F2018%2F01%2F26%2Fpython%E7%88%AC%E8%99%AB%EF%BC%883%EF%BC%89%2F</url>
     <content type="text"><![CDATA[之前的两节，我们把我们要的东西爬取下来，但是并没有做存储，下面我们将会讲解如何做存储。 保存到Excel123import pandasdf = pandas.DataFrame(final)df.to_excel('news.xlsx') 这是就可以在我们的目录当中找到news.xlsx的文件。 保存到数据库123import sqlite3with sqlite3.connect('news.sqlite') as db: df.to_sql('news',con = db) 可以利用pandas去sqlite中拿数据：12with sqlite3.connect('news.sqlite') as db: df2 = pandas.read_sql('SELECT * FROM news',con = db) 连上钱两次，就算是一个完整的爬虫过程了。]]></content>

@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[利用Python进行数据分析]]></title>
+    <url>%2F2018%2F02%2F20%2F%E5%88%A9%E7%94%A8Python%E8%BF%9B%E8%A1%8C%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%2F</url>
+    <content type="text"><![CDATA[ipythonipython外加一个文本编辑器是较好的Python开发环境。当然，一款IDE也是不错的选择，但是有些IDE本身就是集成了IPython。 IPython本身并没有提供任何的计算和数据分析的功能，其主要目地就是在交互式计算和软件开发这两个方面最大化的提高生产力。他鼓励的是“执行 探索”的工作模式，而不是许多变成语言那种“编辑 编译 运行”的传统模式。 python基础启动就像标准的Python解释器那样输入ipython即可进入。12345C:\Users\diannaoλ ipythonPython 3.6.3 |Anaconda custom (64-bit)| (default, Oct 15 2017, 03:27:45) [MSC v.1900 64 bit (AMD64)]Type 'copyright', 'credits' or 'license' for more informationIPython 6.1.0 -- An enhanced Interactive Python. Type '?' for help. 注意的是Python对象都被格式化的可读性很好，和print的输出形式有着显著的区别。 Tab键自动填充在shell中输入表达式时，只要按下Tab键，当前命名空间只要有与输入的字符串相匹配的变量就会被找出：而且还可以用在任何对象后面以及模块后面： 据说还可以填充路径字符串，本人无法成功，原因不明。 内省可以显示命名空间的信对象信息，以及函数的信息（一个问号会显示docstring，连个问号会显示整个函数的源代码）。 还可以作为正则表达式中去匹配： %run命令用来执行脚本文件。12%run 文件名.py` 执行之后就可以在ipython shell中运用脚本里的全局变量、函数、模块等等。 执行剪切板中的代码利用%paste和%cpaste。%paste是直接复制后立即执行，%cpaste可以对此复制，方法是键入%cpaste后再点击右键会有提示，不停的在剪切板中添加新的元素就可以不断的复制粘贴，最后输入–，如果发现不对就输入Ctrl-c。 键盘快捷键 Ctrl-A 将光标移动到行首 Ctrl-E 将光标移动到行尾 Ctrl-K 删除从光标开始至行尾的文本 Ctrl-U 清除当前行的所有文本 Ctrl-L 清屏 魔术命令 %quickref 显示IPython的快速参考 %magic 显示所有魔术命令的详细文档 %debug 从最新的异常跟踪的底端进入交互式调试 %hist 打印命令的输入历史 %pdb 在异常发生后自动进入调试器 %paste 执行剪贴板的Python代码 %cpaste python]]></content>
+      <categories>
+        <category>python工具</category>
+      </categories>
+      <tags>
+        <tag>数据分析</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[module安装问题]]></title>
     <url>%2F2018%2F01%2F29%2Fmodule%E5%AE%89%E8%A3%85%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[前言：由于我为了方便，开始就安装了Anaconda，所以很多模块都已经装好了，遇到没有的模块，我们可以用pip install +模块名字，但是有的时候也会出现问题。 wordcloud安装出错你会发现在cmd的输入命令 pip install wordcloud 时会报错。解决方法： 在以下这个网址http://link.zhihu.com/?target=http%3A//www.lfd.uci.edu/%7Egohlke/pythonlibs/%23lxml下载你需要的的对应版本模块。 接着，把下载下来的文件原封不动的拷贝到你pyhon或者Anaconda的Scripts中，我的就是F:\Anaconda\Scripts 再到cmd中执行pip install F:\Anaconda\Scripts\刚才的文件名 这样就能下载成功！]]></content>

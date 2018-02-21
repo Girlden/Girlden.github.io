@@ -352,8 +352,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-02-20T19:11:39+08:00">
-                2018-02-20
+              <time title="更新于" itemprop="dateModified" datetime="2018-02-21T14:13:20+08:00">
+                2018-02-21
               </time>
             
           </span>
@@ -423,7 +423,7 @@
           
             <h1 id="ipython"><a href="#ipython" class="headerlink" title="ipython"></a>ipython</h1><p><strong>ipython外加一个文本编辑器</strong>是较好的Python开发环境。当然，一款IDE也是不错的选择，但是有些IDE本身就是集成了IPython。</p>
 <p>IPython本身并没有提供任何的计算和数据分析的功能，其主要目地就是在交互式计算和软件开发这两个方面最大化的提高生产力。他鼓励的是“<strong>执行 探索</strong>”的工作模式，而不是许多变成语言那种“编辑 编译 运行”的传统模式。</p>
-<h2 id="python基础"><a href="#python基础" class="headerlink" title="python基础"></a>python基础</h2><p>启动就像标准的Python解释器那样输入ipython即可进入。<br><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\diannao</span><br><span class="line">λ ipython</span><br><span class="line">Python <span class="number">3.6</span><span class="number">.3</span> |Anaconda custom (<span class="number">64</span>-<span class="built_in">bit</span>)| (<span class="built_in">default</span>, Oct <span class="number">15</span> <span class="number">2017</span>, <span class="number">03</span>:<span class="number">27</span>:<span class="number">45</span>) [MSC v<span class="number">.1900</span> <span class="number">64</span> <span class="built_in">bit</span> (AMD64)]</span><br><span class="line">Type <span class="string">'copyright'</span>, <span class="string">'credits'</span> <span class="keyword">or</span> <span class="string">'license'</span> <span class="built_in">for</span> more information</span><br><span class="line">IPython <span class="number">6.1</span><span class="number">.0</span> -- An enhanced Interactive Python. Type <span class="string">'?'</span> <span class="built_in">for</span> help.</span><br></pre></td></tr></table></figure></p>
+<h2 id="python基础"><a href="#python基础" class="headerlink" title="python基础"></a>python基础</h2><p>启动就像标准的Python解释器那样输入ipython即可进入。<br><figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\diannao</span><br><span class="line">λ ipython</span><br><span class="line">Python <span class="number">3.6</span>.<span class="number">3</span> |Anaconda custom (<span class="number">64</span>-<span class="built_in">bit</span>)| (<span class="keyword">default</span>, Oct <span class="number">15</span> <span class="number">2017</span>, <span class="number">03</span>:<span class="number">27</span>:<span class="number">45</span>) [MSC v.<span class="number">1900</span> <span class="number">64</span> <span class="built_in">bit</span> (AMD64)]</span><br><span class="line"><span class="keyword">Type</span> <span class="symbol">'copyright</span>', <span class="symbol">'credits</span>' <span class="keyword">or</span> <span class="symbol">'license</span>' <span class="keyword">for</span> more information</span><br><span class="line">IPython <span class="number">6.1</span>.<span class="number">0</span> <span class="comment">-- An enhanced Interactive Python. Type '?' for help.</span></span><br></pre></td></tr></table></figure></p>
 <p>注意的是Python对象都被格式化的可读性很好，和print的输出形式有着显著的区别。</p>
 <p><img src="https://i.imgur.com/U3bmXhW.png" alt=""></p>
 <p><img src="https://i.imgur.com/4eDeIEw.png" alt=""></p>
@@ -434,7 +434,7 @@
 <p><img src="https://i.imgur.com/mvJskMN.png" alt=""></p>
 <p>还可以作为正则表达式中去匹配：</p>
 <p><img src="https://i.imgur.com/FuruaTS.png" alt=""></p>
-<h2 id="run命令"><a href="#run命令" class="headerlink" title="%run命令"></a>%run命令</h2><p>用来执行脚本文件。<br><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">%<span class="keyword">run</span><span class="bash"> 文件名.py</span></span><br><span class="line"><span class="bash">`</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="run命令"><a href="#run命令" class="headerlink" title="%run命令"></a>%run命令</h2><p>用来执行脚本文件。<br><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%<span class="keyword">run</span><span class="bash"> 文件名.py</span></span><br></pre></td></tr></table></figure></p>
 <p>执行之后就可以在ipython shell中运用脚本里的全局变量、函数、模块等等。</p>
 <h2 id="执行剪切板中的代码"><a href="#执行剪切板中的代码" class="headerlink" title="执行剪切板中的代码"></a>执行剪切板中的代码</h2><p>利用%paste和%cpaste。%paste是直接复制后立即执行，%cpaste可以对此复制，方法是键入%cpaste后再点击右键会有提示，不停的在剪切板中添加新的元素就可以不断的复制粘贴，最后输入–，如果发现不对就输入Ctrl-c。</p>
 <h2 id="键盘快捷键"><a href="#键盘快捷键" class="headerlink" title="键盘快捷键"></a>键盘快捷键</h2><ul>
@@ -450,9 +450,28 @@
 <li>%debug     从最新的异常跟踪的底端进入交互式调试</li>
 <li>%hist      打印命令的输入历史</li>
 <li>%pdb       在异常发生后自动进入调试器</li>
-<li>%paste     执行剪贴板的Python代码</li>
-<li>%cpaste    python</li>
+<li>%time      报告某段程序执行时间</li>
+<li>%timeit    多次执行某段程序，计算系综平均执行时间，对执行时间非常小的代码很有用。</li>
+<li>%xdel variable 删除variable，并清除一切引用。</li>
 </ul>
+<h2 id="基于Qt的富GUI控制台"><a href="#基于Qt的富GUI控制台" class="headerlink" title="基于Qt的富GUI控制台"></a>基于Qt的富GUI控制台</h2><p>安装了PyQt或Pyside，输入<code>ipython qtconsole --pylab=inline</code><br>这里我的版本是比较新的运行会出现警告，输入<code>juyter qtconsole</code>就行。</p>
+<h2 id="matplotlib集成与pylab模式"><a href="#matplotlib集成与pylab模式" class="headerlink" title="matplotlib集成与pylab模式"></a>matplotlib集成与pylab模式</h2><p>输入<code>ipython --pylab</code></p>
+<h2 id="使用命令历史"><a href="#使用命令历史" class="headerlink" title="使用命令历史"></a>使用命令历史</h2><p>ipython维护这一个小型的数据库，其中包含你执行过程中每条命令文本。</p>
+<h3 id="搜索并重用命令历史"><a href="#搜索并重用命令历史" class="headerlink" title="搜索并重用命令历史"></a>搜索并重用命令历史</h3><p>按住上或下（或者Ctrl-P或Ctrl-N）你就可以搜索你之前输入过的命令。</p>
+<p>输入之前命令的部分字符再按住Crtl-R就能跳出与其匹配的命令。</p>
+<h3 id="输入变量和输出变量"><a href="#输入变量和输出变量" class="headerlink" title="输入变量和输出变量"></a>输入变量和输出变量</h3><p>忘记把函数赋值给变量很让人郁闷，ipython会将一些输入和输出的引用保存在一些特殊的变量里，<strong>最近的两个输出</strong>结果分别保存在_和__中。</p>
+<p>输入文本被保存在名为_ix的变量中，其中x代表行号，<br>对应的输入变量被保存_x中，x的意义一样。<br><code>exec _ix</code>可以执行命令。<br><code>%xdel</code>和<code>%reset</code>可以解决释放内存不成功的问题。</p>
+<h2 id="与操作系统的交互"><a href="#与操作系统的交互" class="headerlink" title="与操作系统的交互"></a>与操作系统的交互</h2><ul>
+<li>%bookmark        使用ipython的目录书签系统</li>
+<li>%cd directory    将系统工作目录更改为书签系统</li>
+<li>%pwd             返回系统的当前工作目录</li>
+<li>%push directory  将当前目录压入堆栈，并转向目标目录</li>
+<li>%poped           弹出栈顶目录，并转向目该目录</li>
+<li>%dirs            返回一个含有当前目录栈的列表</li>
+</ul>
+<h3 id="shell命令和别名"><a href="#shell命令和别名" class="headerlink" title="shell命令和别名"></a>shell命令和别名</h3><p>以感叹号开头的命令行表示其后的所有内容需要在shell中执行。比如：<br><code>!ipython</code>可以从ipython中退出然后进入到python标准交互系统中。<br>还可以用<code>%alias 别名 命令</code>来为别名自定义别名，不过这是暂时的。</p>
+<h3 id="目录书签系统"><a href="#目录书签系统" class="headerlink" title="目录书签系统"></a>目录书签系统</h3><p>输入<code>%bookmark db 目录</code>就可以将目录用db来取代，下次直接输入<code>cd db</code>就能进入刚才你输入的目录。</p>
+<h2 id="IPython-HTML-Notebook"><a href="#IPython-HTML-Notebook" class="headerlink" title="IPython HTML Notebook"></a>IPython HTML Notebook</h2><p>在命令行中输入<code>jupyter notebook</code><br>注意这里我的版本，不是以前用的ipython notebook，而且后面也不能随便添加标注–<strong>pylab=inline</strong>，直接在<strong>juyter notebook</strong>中输入%<strong>pylab inline</strong>即可。</p>
 
           
         

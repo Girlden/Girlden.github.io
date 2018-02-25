@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[MySQLL数据导入]]></title>
+    <url>%2F2018%2F02%2F25%2FMySQLL%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5%2F</url>
+    <content type="text"><![CDATA[在安装完MySQL数据库后，数据库中的数据呈现最初始的状态，所以需要向其中填充数据，但是这是数据准备阶段的工作。下面简单介绍一下：]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>-MySQL -数据准备</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[MySQL安装与配置]]></title>
     <url>%2F2018%2F02%2F24%2FMySQL%E5%AE%89%E8%A3%85%2F</url>
     <content type="text"><![CDATA[我们首先可以在Mysql的官网上找到我们的需要下载的文件。选择符合自己电脑的版本。 这些都是不需要安装的压缩包，这里就讲一下怎么用这个压缩包安装。 解压文件，在文件里添加初始化文件my.ini。先新建txt文档然后再更名为my.ini。在此文档里添加一段初始化的代码。12345678910111213141516171819[mysql]#设置mysql客户端默认字符集default-character-set=utf8[mysqld]#设置3306端口port=3306#设置mysql的安装目录basedir=D:\Program Files\mysql-5.7.21-winx64#设置mysql数据库的数据库的存放目录datadir=D:\Program Files\mysql-5.7.21-winx64\data#允许最大连接数max_connections = 200#服务端使用的字符集默认为8比特的latin1字符集character-set-server=utf8#开启查询缓存explicit_defaults_for_timestamp = trueskip-grant-tables#创建新表将使用的默认存储引擎default-storage-engine=INNODB 需要注意的是：上面第二个【】里是mysqld。 配置系统变量。在系统变量里添加MYSQL_HOME,路径填你解压文件所在的目录下，我的是D:\Program Files\mysql-5.7.21-winx64。然后在系统path里添加：%MYSQL_HOME%\bin。 以管理员身份运行命令终端cmd。执行一下代码： 123d:cd *D:\Program Files\mysql-5.7.21-winx64\binmysqld --initialize --user=mysql --console 安装服务。 1mysqld --install MySQL5.7.21 启动服务。 1net start MySQL5.7.21 修改密码。 1set password for root@local=password('你的密码') 每次登陆mysql，就输入1mysql -u root -p]]></content>

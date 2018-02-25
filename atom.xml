@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-02-25T02:51:15.368Z</updated>
+  <updated>2018-02-25T07:33:44.076Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MySQLL数据导入</title>
+    <link href="http://yoursite.com/2018/02/25/MySQLL%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5/"/>
+    <id>http://yoursite.com/2018/02/25/MySQLL数据导入/</id>
+    <published>2018-02-25T07:29:00.000Z</published>
+    <updated>2018-02-25T07:33:44.076Z</updated>
+    
+    <content type="html"><![CDATA[<p>在安装完MySQL数据库后，数据库中的数据呈现最初始的状态，所以需要向其中填充数据，但是这是数据准备阶段的工作。下面简单介绍一下：</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;在安装完MySQL数据库后，数据库中的数据呈现最初始的状态，所以需要向其中填充数据，但是这是数据准备阶段的工作。下面简单介绍一下：&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="数据库" scheme="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="-MySQL -数据准备" scheme="http://yoursite.com/tags/MySQL-%E6%95%B0%E6%8D%AE%E5%87%86%E5%A4%87/"/>
+    
+  </entry>
   
   <entry>
     <title>MySQL安装与配置</title>

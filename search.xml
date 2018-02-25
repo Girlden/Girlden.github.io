@@ -1,9 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[MySQL安装与配置]]></title>
+    <url>%2F2018%2F02%2F24%2FMySQL%E5%AE%89%E8%A3%85%2F</url>
+    <content type="text"><![CDATA[我们首先可以在Mysql的官网上找到我们的需要下载的文件。选择符合自己电脑的版本。 这些都是不需要安装的压缩包，这里就讲一下怎么用这个压缩包安装。 解压文件，在文件里添加初始化文件my.ini。先新建txt文档然后再更名为my.ini。在此文档里添加一段初始化的代码。12345678910111213141516171819[mysql]#设置mysql客户端默认字符集default-character-set=utf8[mysqld]#设置3306端口port=3306#设置mysql的安装目录basedir=D:\Program Files\mysql-5.7.21-winx64#设置mysql数据库的数据库的存放目录datadir=D:\Program Files\mysql-5.7.21-winx64\data#允许最大连接数max_connections = 200#服务端使用的字符集默认为8比特的latin1字符集character-set-server=utf8#开启查询缓存explicit_defaults_for_timestamp = trueskip-grant-tables#创建新表将使用的默认存储引擎default-storage-engine=INNODB 需要注意的是：上面第二个【】里是mysqld。 配置系统变量。在系统变量里添加MYSQL_HOME,路径填你解压文件所在的目录下，我的是D:\Program Files\mysql-5.7.21-winx64。然后在系统path里添加：%MYSQL_HOME%\bin。 以管理员身份运行命令终端cmd。执行一下代码： 123d:cd *D:\Program Files\mysql-5.7.21-winx64\binmysqld --initialize --user=mysql --console 安装服务。 1mysqld --install MySQL5.7.21 启动服务。 1net start MySQL5.7.21 修改密码。 1set password for root@local=password('你的密码') 每次登陆mysql，就输入1mysql -u root -p]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[利用Python进行数据分析之Pandas]]></title>
     <url>%2F2018%2F02%2F21%2F%E5%88%A9%E7%94%A8Python%E8%BF%9B%E8%A1%8C%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8BPandas%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[2008年开始就有pandas库，构建者构造它的原因就是没有任何一个工具可以满足他的工作需求。 具备按轴自动或显示数据的对齐的功能的数据结构。 集成时间序列功能。 既能处理时间序列数据也能处理非时间序列数据的数据结构。 数据运算和约简可以根据不同的元素数据执行。 灵活处理缺失数据 合并及其他出现在常见数据库中的关系型运算。 我]]></content>
+      <categories>
+        <category>python工具</category>
+      </categories>
+      <tags>
+        <tag>Pandas</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[利用Python进行数据分析之IPython]]></title>

@@ -305,6 +305,198 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/24/MySQL安装/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Girlden">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/me.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Girlden's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/24/MySQL安装/" itemprop="url">MySQL安装与配置</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-24T19:47:01+08:00">
+                2018-02-24
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-02-25T10:51:15+08:00">
+                2018-02-25
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数据库/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/02/24/MySQL安装/" class="leancloud_visitors" data-flag-title="MySQL安装与配置">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>我们首先可以在<a href="https://dev.mysql.com/downloads/mysql/" target="_blank" rel="noopener">Mysql的官网</a>上找到我们的需要下载的文件。选择符合自己电脑的版本。</p>
+<p><img src="https://i.imgur.com/rXpNNFo.png" alt=""></p>
+<p>这些都是不需要安装的压缩包，这里就讲一下怎么用这个压缩包安装。</p>
+<ol>
+<li>解压文件，在文件里添加初始化文件<strong>my.ini</strong>。先新建txt文档然后再更名为my.ini。<br><img src="https://i.imgur.com/i9ktpSH.png" alt=""><br>在此文档里添加一段初始化的代码。<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">[mysql]</span><br><span class="line"><span class="comment">#设置mysql客户端默认字符集</span></span><br><span class="line"><span class="attribute">default-character-set</span>=utf8</span><br><span class="line">[mysqld]</span><br><span class="line"><span class="comment">#设置3306端口</span></span><br><span class="line"><span class="attribute">port</span>=3306</span><br><span class="line"><span class="comment">#设置mysql的安装目录</span></span><br><span class="line"><span class="attribute">basedir</span>=D:\Program Files\mysql-5.7.21-winx64</span><br><span class="line"><span class="comment">#设置mysql数据库的数据库的存放目录</span></span><br><span class="line"><span class="attribute">datadir</span>=D:\Program Files\mysql-5.7.21-winx64\data</span><br><span class="line"><span class="comment">#允许最大连接数</span></span><br><span class="line">max_connections = 200</span><br><span class="line"><span class="comment">#服务端使用的字符集默认为8比特的latin1字符集</span></span><br><span class="line"><span class="attribute">character-set-server</span>=utf8</span><br><span class="line"><span class="comment">#开启查询缓存</span></span><br><span class="line">explicit_defaults_for_timestamp = <span class="literal">true</span></span><br><span class="line">skip-grant-tables</span><br><span class="line"><span class="comment">#创建新表将使用的默认存储引擎</span></span><br><span class="line"><span class="attribute">default-storage-engine</span>=INNODB</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>需要注意的是：上面第二个【】里是mysqld。</p>
+<ol>
+<li><p>配置系统变量。在系统变量里添加MYSQL_HOME,路径填你解压文件所在的目录下，我的是<strong>D:\Program Files\mysql-5.7.21-winx64</strong>。然后在系统path里添加：<strong>%MYSQL_HOME%\bin</strong>。</p>
+</li>
+<li><p>以管理员身份运行命令终端cmd。执行一下代码：</p>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">d:</span><br><span class="line"><span class="keyword">cd</span> *D:\Program Files\mysql-5.7.21-winx64\bin</span><br><span class="line">mysqld <span class="params">--initialize</span> <span class="params">--user=mysql</span> <span class="params">--console</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装服务。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">mysqld</span> <span class="selector-tag">--install</span> <span class="selector-tag">MySQL5</span><span class="selector-class">.7</span><span class="selector-class">.21</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启动服务。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">net</span> <span class="selector-tag">start</span> <span class="selector-tag">MySQL5</span><span class="selector-class">.7</span><span class="selector-class">.21</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改密码。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> <span class="keyword">password</span> <span class="keyword">for</span> root@<span class="keyword">local</span>=<span class="keyword">password</span>(<span class="string">'你的密码'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>每次登陆mysql，就输入<br><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">mysql -u root -p</span></span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+	<div>
+	    
+	</div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/21/利用Python进行数据分析之Pandas/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -352,12 +544,34 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-02-21T14:19:56+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-02-21T18:40:33+08:00">
                 2018-02-21
               </time>
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python工具/" itemprop="url" rel="index">
+                    <span itemprop="name">python工具</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -399,7 +613,17 @@
       
         
           
-            
+            <p>2008年开始就有pandas库，构建者构造它的原因就是没有任何一个工具可以满足他的工作需求。</p>
+<ul>
+<li>具备按轴自动或显示数据的对齐的功能的数据结构。</li>
+<li>集成时间序列功能。</li>
+<li>既能处理时间序列数据也能处理非时间序列数据的数据结构。</li>
+<li>数据运算和约简可以根据不同的元素数据执行。</li>
+<li>灵活处理缺失数据</li>
+<li>合并及其他出现在常见数据库中的关系型运算。</li>
+</ul>
+<p>我</p>
+
           
         
       
@@ -568,7 +792,7 @@
           
             <h1 id="ipython"><a href="#ipython" class="headerlink" title="ipython"></a>ipython</h1><p><strong>ipython外加一个文本编辑器</strong>是较好的Python开发环境。当然，一款IDE也是不错的选择，但是有些IDE本身就是集成了IPython。</p>
 <p>IPython本身并没有提供任何的计算和数据分析的功能，其主要目地就是在交互式计算和软件开发这两个方面最大化的提高生产力。他鼓励的是“<strong>执行 探索</strong>”的工作模式，而不是许多变成语言那种“编辑 编译 运行”的传统模式。</p>
-<h2 id="python基础"><a href="#python基础" class="headerlink" title="python基础"></a>python基础</h2><p>启动就像标准的Python解释器那样输入ipython即可进入。<br><figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\diannao</span><br><span class="line">λ ipython</span><br><span class="line">Python <span class="number">3.6</span>.<span class="number">3</span> |Anaconda custom (<span class="number">64</span>-<span class="built_in">bit</span>)| (<span class="keyword">default</span>, Oct <span class="number">15</span> <span class="number">2017</span>, <span class="number">03</span>:<span class="number">27</span>:<span class="number">45</span>) [MSC v.<span class="number">1900</span> <span class="number">64</span> <span class="built_in">bit</span> (AMD64)]</span><br><span class="line"><span class="keyword">Type</span> <span class="symbol">'copyright</span>', <span class="symbol">'credits</span>' <span class="keyword">or</span> <span class="symbol">'license</span>' <span class="keyword">for</span> more information</span><br><span class="line">IPython <span class="number">6.1</span>.<span class="number">0</span> <span class="comment">-- An enhanced Interactive Python. Type '?' for help.</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="python基础"><a href="#python基础" class="headerlink" title="python基础"></a>python基础</h2><p>启动就像标准的Python解释器那样输入ipython即可进入。<br><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\diannao</span><br><span class="line">λ ipython</span><br><span class="line">Python <span class="number">3.6</span><span class="number">.3</span> |Anaconda custom (<span class="number">64</span>-<span class="built_in">bit</span>)| (<span class="built_in">default</span>, Oct <span class="number">15</span> <span class="number">2017</span>, <span class="number">03</span>:<span class="number">27</span>:<span class="number">45</span>) [MSC v<span class="number">.1900</span> <span class="number">64</span> <span class="built_in">bit</span> (AMD64)]</span><br><span class="line">Type <span class="string">'copyright'</span>, <span class="string">'credits'</span> <span class="keyword">or</span> <span class="string">'license'</span> <span class="built_in">for</span> more information</span><br><span class="line">IPython <span class="number">6.1</span><span class="number">.0</span> -- An enhanced Interactive Python. Type <span class="string">'?'</span> <span class="built_in">for</span> help.</span><br></pre></td></tr></table></figure></p>
 <p>注意的是Python对象都被格式化的可读性很好，和print的输出形式有着显著的区别。</p>
 <p><img src="https://i.imgur.com/U3bmXhW.png" alt=""></p>
 <p><img src="https://i.imgur.com/4eDeIEw.png" alt=""></p>
@@ -1818,163 +2042,13 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/23/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Girlden">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/me.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Girlden's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/23/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-23T23:47:33+08:00">
-                2017-11-23
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2017-11-23T23:47:33+08:00">
-                2017-11-23
-              </time>
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/11/23/hello-world/" class="leancloud_visitors" data-flag-title="Hello World">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-	<div>
-	    
-	</div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -2022,7 +2096,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2033,7 +2107,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -2044,7 +2118,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

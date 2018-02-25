@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[MySQLL数据导入]]></title>
+    <title><![CDATA[MySQL数据导入]]></title>
     <url>%2F2018%2F02%2F25%2FMySQLL%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5%2F</url>
-    <content type="text"><![CDATA[在安装完MySQL数据库后，数据库中的数据呈现最初始的状态，所以需要向其中填充数据，但是这是数据准备阶段的工作。下面简单介绍一下：]]></content>
+    <content type="text"><![CDATA[在安装完MySQL数据库后，数据库中的数据呈现最初始的状态，所以需要向其中填充数据，但是这是数据准备阶段的工作。下面简单介绍一下： 构建数据库和table 首先需要进入数据库。在管理员命令窗口输入net start mysql5.7.21。 然后再登陆mysql。 1mysql -u root -p 进入后再创建database。 1CREATE DATABASE test2 #默认是以utf8编码 进入test2这个database中。 1use test2 再进行CSV文件的导入。以table的形式。 123456CREATE TABLE TEST_BOOKS1( team_name varchar(100), Wins int, Draws int, Losses int); 创建table的格式如下：变量名 类型 限制以上的实例就是我的表格结构的概括，可以根据自己的需求自行修改参数： 导入数据导入将自己文件里的数据导入到这个构造好的table中。123456LOAD DATA INFILE 'C:\Users\diannao\Desktop\2015-16-premier-league.csv'INTO TABLE TEST_BOOKS1FIELDS TERMINATED BY ','ENCLOSED BY '"'LINES TERMINATED BY '\n'IGONRE 1 ROWS; 错误解决这里需要提一下，如果运行不成功，并且显示的错误是secure-file-priv有问题，那么就需要在my.ini文件中的[mysqld]下进行声明secure-file-priv=,这里的意思就是对于导入和导出不去进行干扰。注意，声明完成后，还需要在管理员命令窗口下对mysql5.7.21进行重启，才能有效。 检验检验的方法SELECT * FROM TEST_BOOKS1到这里就算导入成功了！]]></content>
       <categories>
         <category>数据库</category>
       </categories>
       <tags>
-        <tag>-MySQL -数据准备</tag>
+        <tag>MySQL</tag>
+        <tag>数据准备</tag>
       </tags>
   </entry>
   <entry>

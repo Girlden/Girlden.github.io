@@ -324,7 +324,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/25/MySQLL数据导入/" itemprop="url">MySQLL数据导入</a></h1>
+                <a class="post-title-link" href="/2018/02/25/MySQLL数据导入/" itemprop="url">MySQL数据导入</a></h1>
         
 
         <div class="post-meta">
@@ -352,7 +352,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-02-25T15:33:44+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-02-25T16:25:14+08:00">
                 2018-02-25
               </time>
             
@@ -388,7 +388,7 @@
 
           
           
-             <span id="/2018/02/25/MySQLL数据导入/" class="leancloud_visitors" data-flag-title="MySQLL数据导入">
+             <span id="/2018/02/25/MySQLL数据导入/" class="leancloud_visitors" data-flag-title="MySQL数据导入">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -422,6 +422,25 @@
         
           
             <p>在安装完MySQL数据库后，数据库中的数据呈现最初始的状态，所以需要向其中填充数据，但是这是数据准备阶段的工作。下面简单介绍一下：</p>
+<h1 id="构建数据库和table"><a href="#构建数据库和table" class="headerlink" title="构建数据库和table"></a>构建数据库和table</h1><ol>
+<li>首先需要进入数据库。在管理员命令窗口输入<code>net start mysql5.7.21</code>。</li>
+<li><p>然后再登陆mysql。</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">mysql -u root -p</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>进入后再创建database。</p>
+<figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> DATABASE test2 <span class="meta">#默认是以utf8编码</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>进入test2这个<strong>database中</strong>。</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">use</span> test2</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>再进行CSV文件的导入。以table的形式。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> TEST_BOOKS1(</span><br><span class="line">      team_name <span class="built_in">varchar</span>(<span class="number">100</span>),</span><br><span class="line">      Wins <span class="built_in">int</span>,</span><br><span class="line">      Draws <span class="built_in">int</span>,</span><br><span class="line">      Losses <span class="built_in">int</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>创建table的格式如下：<code>变量名 类型 限制</code><br>以上的实例就是我的表格结构的概括，可以根据自己的需求自行修改参数：<br><img src="https://i.imgur.com/Qb8LePJ.png" alt=""></p>
+<h1 id="导入数据"><a href="#导入数据" class="headerlink" title="导入数据"></a>导入数据</h1><h2 id="导入"><a href="#导入" class="headerlink" title="导入"></a>导入</h2><p>将自己文件里的数据导入到这个构造好的table中。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">LOAD</span> <span class="keyword">DATA</span> <span class="keyword">INFILE</span> <span class="string">'C:\Users\diannao\Desktop\2015-16-premier-league.csv'</span></span><br><span class="line"><span class="keyword">INTO</span> <span class="keyword">TABLE</span> TEST_BOOKS1</span><br><span class="line"><span class="keyword">FIELDS</span> <span class="keyword">TERMINATED</span> <span class="keyword">BY</span> <span class="string">','</span></span><br><span class="line"><span class="keyword">ENCLOSED</span> <span class="keyword">BY</span> <span class="string">'"'</span></span><br><span class="line"><span class="keyword">LINES</span> <span class="keyword">TERMINATED</span> <span class="keyword">BY</span> <span class="string">'\n'</span></span><br><span class="line">IGONRE <span class="number">1</span> <span class="keyword">ROWS</span>;</span><br></pre></td></tr></table></figure></p>
+<h2 id="错误解决"><a href="#错误解决" class="headerlink" title="错误解决"></a>错误解决</h2><p>这里需要提一下，如果运行不成功，并且显示的错误是secure-file-priv有问题，那么就需要在my.ini文件中的[mysqld]下进行声明<code>secure-file-priv=</code>,这里的意思就是对于导入和导出不去进行干扰。注意，声明完成后，还需要在管理员命令窗口下对mysql5.7.21进行重启，才能有效。</p>
+<h2 id="检验"><a href="#检验" class="headerlink" title="检验"></a>检验</h2><p>检验的方法<code>SELECT * FROM TEST_BOOKS1</code><br><img src="https://i.imgur.com/YaAxHeD.png" alt=""><br>到这里就算导入成功了！</p>
 
           
         
@@ -960,7 +979,7 @@
           
             <h1 id="ipython"><a href="#ipython" class="headerlink" title="ipython"></a>ipython</h1><p><strong>ipython外加一个文本编辑器</strong>是较好的Python开发环境。当然，一款IDE也是不错的选择，但是有些IDE本身就是集成了IPython。</p>
 <p>IPython本身并没有提供任何的计算和数据分析的功能，其主要目地就是在交互式计算和软件开发这两个方面最大化的提高生产力。他鼓励的是“<strong>执行 探索</strong>”的工作模式，而不是许多变成语言那种“编辑 编译 运行”的传统模式。</p>
-<h2 id="python基础"><a href="#python基础" class="headerlink" title="python基础"></a>python基础</h2><p>启动就像标准的Python解释器那样输入ipython即可进入。<br><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\diannao</span><br><span class="line">λ ipython</span><br><span class="line">Python <span class="number">3.6</span><span class="number">.3</span> |Anaconda custom (<span class="number">64</span>-<span class="built_in">bit</span>)| (<span class="built_in">default</span>, Oct <span class="number">15</span> <span class="number">2017</span>, <span class="number">03</span>:<span class="number">27</span>:<span class="number">45</span>) [MSC v<span class="number">.1900</span> <span class="number">64</span> <span class="built_in">bit</span> (AMD64)]</span><br><span class="line">Type <span class="string">'copyright'</span>, <span class="string">'credits'</span> <span class="keyword">or</span> <span class="string">'license'</span> <span class="built_in">for</span> more information</span><br><span class="line">IPython <span class="number">6.1</span><span class="number">.0</span> -- An enhanced Interactive Python. Type <span class="string">'?'</span> <span class="built_in">for</span> help.</span><br></pre></td></tr></table></figure></p>
+<h2 id="python基础"><a href="#python基础" class="headerlink" title="python基础"></a>python基础</h2><p>启动就像标准的Python解释器那样输入ipython即可进入。<br><figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\diannao</span><br><span class="line">λ ipython</span><br><span class="line">Python <span class="number">3.6</span>.<span class="number">3</span> |Anaconda custom (<span class="number">64</span>-<span class="built_in">bit</span>)| (<span class="keyword">default</span>, Oct <span class="number">15</span> <span class="number">2017</span>, <span class="number">03</span>:<span class="number">27</span>:<span class="number">45</span>) [MSC v.<span class="number">1900</span> <span class="number">64</span> <span class="built_in">bit</span> (AMD64)]</span><br><span class="line"><span class="keyword">Type</span> <span class="symbol">'copyright</span>', <span class="symbol">'credits</span>' <span class="keyword">or</span> <span class="symbol">'license</span>' <span class="keyword">for</span> more information</span><br><span class="line">IPython <span class="number">6.1</span>.<span class="number">0</span> <span class="comment">-- An enhanced Interactive Python. Type '?' for help.</span></span><br></pre></td></tr></table></figure></p>
 <p>注意的是Python对象都被格式化的可读性很好，和print的输出形式有着显著的区别。</p>
 <p><img src="https://i.imgur.com/U3bmXhW.png" alt=""></p>
 <p><img src="https://i.imgur.com/4eDeIEw.png" alt=""></p>
@@ -2129,7 +2148,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

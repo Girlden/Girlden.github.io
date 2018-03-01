@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-02-25T08:25:14.722Z</updated>
+  <updated>2018-03-01T11:35:53.727Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>什么是数据化运营</title>
+    <link href="http://yoursite.com/2018/03/01/%E6%95%B0%E6%8D%AE%E5%8C%96%E8%BF%90%E8%90%A5%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    <id>http://yoursite.com/2018/03/01/数据化运营的基础知识/</id>
+    <published>2018-03-01T09:49:59.000Z</published>
+    <updated>2018-03-01T11:35:53.727Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="1-1-现代营销理论的发展"><a href="#1-1-现代营销理论的发展" class="headerlink" title="1.1 现代营销理论的发展"></a>1.1 现代营销理论的发展</h1><h2 id="4P到4C"><a href="#4P到4C" class="headerlink" title="4P到4C"></a>4P到4C</h2><p>4P指product、Price、Place、Promotion。<br>product：产品注重功能，强调卖点。<br>price：价格需要根据不同的市场定位。<br>place：渠道注重分销商的培养和销售网络的建设。<br>promotion：企业通过改变销售行为来刺激消费，以短期的行为促进消费增长。</p><p>4P理论的核心是Product。</p><p>随着时代的发展，商品丰富起来，市场竞争也日益激烈。在21实际消费者成为了商业的核心。<br>这时4C理论兴起。<br>4C是指consumer、cost、communication、convenience。<br>consumer：是指消费者的需求和欲望。<br>cost：是指消费者得到满足的成本。<br>communication：是指与用户的沟通。<br>convenience：是指用户购买的方便性。</p><p>4C理论的核心是消费者。</p><h2 id="4C到3P3C"><a href="#4C到3P3C" class="headerlink" title="4C到3P3C"></a>4C到3P3C</h2><p>大数据时代的来临，4C理论再次落后于时代发展的需求，海量数据的堆积和存储等迫使现代企业不得不寻找更适合、更可控、更可量化的营销思路和方法论。<br>3P3C的六要素：<br>Probability：营销、运营活动以概率为核心，追求精细化和精准率。<br>Product：产品<br>prospect：目标用户<br>Creative：创新<br>Channel：渠道<br>Cost：成本</p><p>数据分析挖掘所支撑的<strong>目标响应概率</strong>是核心。<br>这里的目标响应概率不应狭义理解为仅仅是预测响应模型之类的响应概率，它有更加宽泛的含义。<br>从宏观上理解，概率可以是特定消费者整体上的概率或可能性。比如，我们用卡方检验某个特定的类别的消费群体在某一个消费行为指标上具有显著性特征。<br>从微观上理解，概率可以具体到某一个特定消费者的“预期响应概率”，比如用逻辑回归算法搭建一预测响应模型，得到每个用户的预计响应概率。</p><h1 id="数据化运营的主要内容"><a href="#数据化运营的主要内容" class="headerlink" title="数据化运营的主要内容"></a>数据化运营的主要内容</h1><p>数据化运营业内没有统一的定义，但是其基本要素和核心是一致的，那就是:“<strong>以企业级海量数据的存储和挖掘应用为核心支持，企业全员参与的，以精准、细分和精细化为特点的企业运营制度和战略</strong>。”</p><p>浅层次的理解的话，就是在企业常规运营的基础上革命性地增添数据分析和挖掘的精准支持。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;1-1-现代营销理论的发展&quot;&gt;&lt;a href=&quot;#1-1-现代营销理论的发展&quot; class=&quot;headerlink&quot; title=&quot;1.1 现代营销理论的发展&quot;&gt;&lt;/a&gt;1.1 现代营销理论的发展&lt;/h1&gt;&lt;h2 id=&quot;4P到4C&quot;&gt;&lt;a href=&quot;#4P到4
+      
+    
+    </summary>
+    
+      <category term="数据分析" scheme="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    
+    
+      <category term="数据化化运营" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E5%8C%96%E5%8C%96%E8%BF%90%E8%90%A5/"/>
+    
+      <category term="营销" scheme="http://yoursite.com/tags/%E8%90%A5%E9%94%80/"/>
+    
+  </entry>
   
   <entry>
     <title>MySQL数据导入</title>

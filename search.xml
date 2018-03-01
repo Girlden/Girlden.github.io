@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[什么是数据化运营]]></title>
+    <url>%2F2018%2F03%2F01%2F%E6%95%B0%E6%8D%AE%E5%8C%96%E8%BF%90%E8%90%A5%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%2F</url>
+    <content type="text"><![CDATA[1.1 现代营销理论的发展4P到4C4P指product、Price、Place、Promotion。product：产品注重功能，强调卖点。price：价格需要根据不同的市场定位。place：渠道注重分销商的培养和销售网络的建设。promotion：企业通过改变销售行为来刺激消费，以短期的行为促进消费增长。 4P理论的核心是Product。 随着时代的发展，商品丰富起来，市场竞争也日益激烈。在21实际消费者成为了商业的核心。这时4C理论兴起。4C是指consumer、cost、communication、convenience。consumer：是指消费者的需求和欲望。cost：是指消费者得到满足的成本。communication：是指与用户的沟通。convenience：是指用户购买的方便性。 4C理论的核心是消费者。 4C到3P3C大数据时代的来临，4C理论再次落后于时代发展的需求，海量数据的堆积和存储等迫使现代企业不得不寻找更适合、更可控、更可量化的营销思路和方法论。3P3C的六要素：Probability：营销、运营活动以概率为核心，追求精细化和精准率。Product：产品prospect：目标用户Creative：创新Channel：渠道Cost：成本 数据分析挖掘所支撑的目标响应概率是核心。这里的目标响应概率不应狭义理解为仅仅是预测响应模型之类的响应概率，它有更加宽泛的含义。从宏观上理解，概率可以是特定消费者整体上的概率或可能性。比如，我们用卡方检验某个特定的类别的消费群体在某一个消费行为指标上具有显著性特征。从微观上理解，概率可以具体到某一个特定消费者的“预期响应概率”，比如用逻辑回归算法搭建一预测响应模型，得到每个用户的预计响应概率。 数据化运营的主要内容数据化运营业内没有统一的定义，但是其基本要素和核心是一致的，那就是:“以企业级海量数据的存储和挖掘应用为核心支持，企业全员参与的，以精准、细分和精细化为特点的企业运营制度和战略。” 浅层次的理解的话，就是在企业常规运营的基础上革命性地增添数据分析和挖掘的精准支持。]]></content>
+      <categories>
+        <category>数据分析</category>
+      </categories>
+      <tags>
+        <tag>数据化化运营</tag>
+        <tag>营销</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[MySQL数据导入]]></title>
     <url>%2F2018%2F02%2F25%2FMySQLL%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5%2F</url>
     <content type="text"><![CDATA[在安装完MySQL数据库后，数据库中的数据呈现最初始的状态，所以需要向其中填充数据，但是这是数据准备阶段的工作。下面简单介绍一下： 构建数据库和table 首先需要进入数据库。在管理员命令窗口输入net start mysql5.7.21。 然后再登陆mysql。 1mysql -u root -p 进入后再创建database。 1CREATE DATABASE test2 #默认是以utf8编码 进入test2这个database中。 1use test2 再进行CSV文件的导入。以table的形式。 123456CREATE TABLE TEST_BOOKS1( team_name varchar(100), Wins int, Draws int, Losses int); 创建table的格式如下：变量名 类型 限制以上的实例就是我的表格结构的概括，可以根据自己的需求自行修改参数： 导入数据导入将自己文件里的数据导入到这个构造好的table中。123456LOAD DATA INFILE 'C:\Users\diannao\Desktop\2015-16-premier-league.csv'INTO TABLE TEST_BOOKS1FIELDS TERMINATED BY ','ENCLOSED BY '"'LINES TERMINATED BY '\n'IGONRE 1 ROWS; 错误解决这里需要提一下，如果运行不成功，并且显示的错误是secure-file-priv有问题，那么就需要在my.ini文件中的[mysqld]下进行声明secure-file-priv=,这里的意思就是对于导入和导出不去进行干扰。注意，声明完成后，还需要在管理员命令窗口下对mysql5.7.21进行重启，才能有效。 检验检验的方法SELECT * FROM TEST_BOOKS1到这里就算导入成功了！]]></content>

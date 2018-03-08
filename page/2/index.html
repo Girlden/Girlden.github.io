@@ -52,6 +52,38 @@
 
 
 
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="https://www.google.com/fonts/css?family=Lato:300,300italic,400,400italic,700,700italic|consolas:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
 
 
 
@@ -291,6 +323,167 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/25/python爬虫/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Girlden">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/me.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Girlden's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/25/python爬虫/" itemprop="url">python爬虫（1）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-25T12:07:52+08:00">
+                2018-01-25
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-01-26T00:51:07+08:00">
+                2018-01-26
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/01/25/python爬虫/" class="leancloud_visitors" data-flag-title="python爬虫（1）">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>今天来简单的学习一下爬取网页的文档，然后归档。</p>
+<h1 id="第一个简单的爬虫"><a href="#第一个简单的爬虫" class="headerlink" title="第一个简单的爬虫"></a>第一个简单的爬虫</h1><p>利用<strong>chrome F12</strong>的检查功能对网页的回应进行读取，这里以新浪网为例。</p>
+<p><img src="https://i.imgur.com/HIf2TXK.png" alt=""></p>
+<p><img src="https://i.imgur.com/5xFFPul.png" alt=""></p>
+<p>获取到这些信息后，我们就能够写出一下代码：<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">new_url = 'http:<span class="comment">//news.sina.com.cn/society/</span></span><br><span class="line">res = requests.<span class="keyword">get</span>(new_url)</span><br><span class="line">res.encoding = 'utf-<span class="number">8</span>'</span><br><span class="line"><span class="built_in">print</span>(res.text)</span><br></pre></td></tr></table></figure></p>
+<p>打印出来后表明没有问题，这是可以用到BeautifulSoup这个模块，讲刚才打印出来的东西丢进去，交给它处理，注意还需标明剖析器是html.parser。</p>
+<figure class="highlight xl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">from bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line">soup = BeautifulSoup(res.<span class="keyword">text</span>,<span class="string">'html.parser'</span>)</span><br></pre></td></tr></table></figure>
+<p>我们可以知道，在res里有很多的标签，我们需要的文字藏在固定的标签中，所以我们下面要做的就是取出我们需要的标签，需要用到soup的select方法。</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">soup2 = soup.select(<span class="string">'h2'</span>)</span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(soup2)</span></span></span><br></pre></td></tr></table></figure>
+<p>结果如下，是一个列表。<br><img src="https://i.imgur.com/nYTzwP3.png" alt=""></p>
+<p>但是我们要爬取的内容的标签是以不同的id和class来区分的，这里涉及到css的相关内容，我们暂且不谈。只需要知道我们需要通过网页的<strong>检查</strong>了解我们的新闻藏在什么杨种类的标签之下。</p>
+<p><img src="https://i.imgur.com/W7x0Sz2.png" alt=""></p>
+<p>现在可以知道我们的内容在news-item的class之下，所以我们运用select(‘.news-item’)的方法去获取，同样的方法，我们又可以知道，新闻的标题在<strong>h标签下</strong>，新闻的时间在<strong>值time的class之下</strong>，链接在<strong>h2标签的href中</strong>，写出一下代码。<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">from bs4 import BeautifulSoup</span><br><span class="line">soup = BeautifulSoup(res<span class="selector-class">.text</span>,<span class="string">'html.parser'</span>)</span><br><span class="line"><span class="keyword">for</span> link <span class="keyword">in</span> soup.select(<span class="string">'.news-item'</span>):</span><br><span class="line">    <span class="keyword">if</span> len(link.select(<span class="string">'h2'</span>)) &gt; <span class="number">0</span>:</span><br><span class="line">        <span class="selector-tag">h2</span> = link.select(<span class="string">'h2'</span>)[<span class="number">0</span>].text</span><br><span class="line">        <span class="selector-tag">time</span> = link.select(<span class="string">'.time'</span>)[<span class="number">0</span>].text</span><br><span class="line">        href = link.select(<span class="string">'a'</span>)[<span class="number">0</span>][<span class="string">'href'</span>]</span><br><span class="line">        print(<span class="selector-tag">time</span>,<span class="selector-tag">h2</span>,href)</span><br></pre></td></tr></table></figure></p>
+<p><strong>注：text取的是标签的文字内容，而[‘href’]取的是标签内部的值。</strong></p>
+<p>最终结果如下：</p>
+<p><img src="https://i.imgur.com/pjSMwDJ.png" alt=""></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+	<div>
+	    
+	</div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -962,7 +1155,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -984,7 +1177,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

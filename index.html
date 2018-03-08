@@ -52,6 +52,38 @@
 
 
 
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="https://www.google.com/fonts/css?family=Lato:300,300italic,400,400italic,700,700italic|consolas:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
 
 
 
@@ -291,6 +323,177 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/08/python3和Python2的区别/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Girlden">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/me.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Girlden's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/08/python3和Python2的区别/" itemprop="url">python3和Python2的区别</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-08T13:18:02+08:00">
+                2018-03-08
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-03-08T13:40:49+08:00">
+                2018-03-08
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/03/08/python3和Python2的区别/" class="leancloud_visitors" data-flag-title="python3和Python2的区别">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>小编在学习apriori算法的时候，发现了一些Python两种版本的差别，虽然不大，但是还是记下来比较好，万一以后要用也好找，毕竟python3在未来还是会取代python2的，但是学习的时候还是python2比较稳定。</p>
+<h1 id="字典dict的has-key"><a href="#字典dict的has-key" class="headerlink" title="字典dict的has_key()"></a>字典dict的has_key()</h1><p>python3中已经不用这个方法了。<br><figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">dict_1 = &#123;k:<span class="string">'g'</span>, e:<span class="string">'h'</span>, y:<span class="string">'j'</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">#对于py2</span></span><br><span class="line"><span class="keyword">if</span> dict_1.has_key(k):</span><br><span class="line"></span><br><span class="line"><span class="meta">#对于py3</span></span><br><span class="line"><span class="keyword">if</span> k in dict_1:</span><br></pre></td></tr></table></figure></p>
+<h1 id="内建函数map"><a href="#内建函数map" class="headerlink" title="内建函数map()"></a>内建函数map()</h1><p>py3中无法返回list<br><figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#py2中直接返回<span class="built_in">list</span></span><br><span class="line">len(<span class="built_in">map</span>对象)</span><br><span class="line"></span><br><span class="line">#py3需要进行一次转换</span><br><span class="line">len(<span class="built_in">list</span>(<span class="built_in">map</span>对象))</span><br></pre></td></tr></table></figure></p>
+<p>2018/3/8 13:35:12 </p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+	<div>
+	    
+	</div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -1676,8 +1879,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-01-26T22:57:49+08:00">
-                2018-01-26
+              <time title="更新于" itemprop="dateModified" datetime="2018-03-07T18:51:08+08:00">
+                2018-03-07
               </time>
             
           </span>
@@ -1746,10 +1949,10 @@
         
           
             <p>之前的两节，我们把我们要的东西爬取下来，但是并没有做存储，下面我们将会讲解如何做存储。</p>
-<h2 id="保存到Excel"><a href="#保存到Excel" class="headerlink" title="保存到Excel"></a>保存到Excel</h2><figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas</span><br><span class="line">df = pandas.DataFrame(<span class="keyword">final</span>)</span><br><span class="line">df.to_excel(<span class="string">'news.xlsx'</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="保存到Excel"><a href="#保存到Excel" class="headerlink" title="保存到Excel"></a>保存到Excel</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas</span><br><span class="line">df = pandas.DataFrame(final)</span><br><span class="line">df.to_excel(<span class="string">'news.xlsx'</span>)</span><br></pre></td></tr></table></figure>
 <p>这是就可以在我们的目录当中找到news.xlsx的文件。</p>
-<h2 id="保存到数据库"><a href="#保存到数据库" class="headerlink" title="保存到数据库"></a>保存到数据库</h2><figure class="highlight xl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sqlite3</span><br><span class="line"><span class="keyword">with</span> sqlite3.connect(<span class="string">'news.sqlite'</span>) <span class="keyword">as</span> db:</span><br><span class="line">    df.to_sql(<span class="string">'news'</span>,con = db)</span><br></pre></td></tr></table></figure>
-<p>可以利用pandas去sqlite中拿数据：<br><figure class="highlight sml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> sqlite3.connect(<span class="symbol">'news</span>.sqlite') <span class="keyword">as</span> db:</span><br><span class="line">    df2 = pandas.read_sql(<span class="symbol">'SELECT</span> * <span class="type">FROM</span> news',con = db)</span><br></pre></td></tr></table></figure></p>
+<h2 id="保存到数据库"><a href="#保存到数据库" class="headerlink" title="保存到数据库"></a>保存到数据库</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sqlite3</span><br><span class="line"><span class="keyword">with</span> sqlite3.connect(<span class="string">'news.sqlite'</span>) <span class="keyword">as</span> db:</span><br><span class="line">    df.to_sql(<span class="string">'news'</span>,con = db)</span><br></pre></td></tr></table></figure>
+<p>可以利用pandas去sqlite中拿数据：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> sqlite3.connect(<span class="string">'news.sqlite'</span>) <span class="keyword">as</span> db:</span><br><span class="line">    df2 = pandas.read_sql(<span class="string">'SELECT * FROM news'</span>,con = db)</span><br></pre></td></tr></table></figure></p>
 <p>连上钱两次，就算是一个完整的爬虫过程了。</p>
 
           
@@ -1849,8 +2052,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-01-26T22:16:19+08:00">
-                2018-01-26
+              <time title="更新于" itemprop="dateModified" datetime="2018-03-07T19:21:40+08:00">
+                2018-03-07
               </time>
             
           </span>
@@ -1926,7 +2129,7 @@
 <li>时间。在class=“date-source”中，但是都在span标签下，可以用contents将不同分层的标签下的东西取出。最后用datetime模块将<strong>时间字符串</strong>变成<strong>时间格式</strong>。</li>
 <li>来源。和上面类似的操作。</li>
 <li>内容。找到后会有分段的内容，利用<strong>for循环</strong>嵌套后就可以取出来，再用<strong>join</strong>连接成一个完整的部分。</li>
-<li>评论数。你在doc中找不到，它在js中，而且还需要用json模块将数据变成我们容易处理的字典。<br>具体代码如下：<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">title = soup.select(<span class="string">'.main-title'</span>)[<span class="number">0</span>].text</span><br><span class="line">date = soup.select(<span class="string">'.date-source'</span>)[<span class="number">0</span>]<span class="selector-class">.contents</span>[<span class="number">1</span>].text</span><br><span class="line"><span class="selector-tag">dt</span> = datetime.strptime(date,<span class="string">'%Y年%m月%d日 %H:%M'</span>)</span><br><span class="line">source = soup.select(<span class="string">'.date-source a '</span>)[<span class="number">0</span>].text</span><br><span class="line"><span class="selector-tag">body</span> = soup.select(<span class="string">'.article p'</span>)[:-<span class="number">1</span>]</span><br><span class="line"><span class="selector-tag">article</span> = <span class="string">'\n'</span>.join([d<span class="selector-class">.text</span><span class="selector-class">.strip</span>() <span class="keyword">for</span> d <span class="keyword">in</span> body])</span><br><span class="line">mport json</span><br><span class="line">comment = requests.get(<span class="string">'http://comment5.news.sina.com.cn/page/info?version=1&amp;format=json&amp;\</span></span><br><span class="line"><span class="string">channel=gn&amp;newsid=comos-fyqyesy2133291&amp;\</span></span><br><span class="line"><span class="string">group=undefined&amp;compress=0&amp;ie=utf-8&amp;oe=utf-8&amp;page=1&amp;page_size=3&amp;t_size=3&amp;\</span></span><br><span class="line"><span class="string">h_size=3&amp;thread=1&amp;callback=jsonp_1516947697495&amp;_=1516947697495'</span>)</span><br><span class="line">jd = json.loads(comment<span class="selector-class">.text</span><span class="selector-class">.lstrip</span>(<span class="string">'jsonp_1516947697495('</span>).rstrip(<span class="string">')'</span>))</span><br><span class="line">jd[<span class="string">'result'</span>][<span class="string">'count'</span>][<span class="string">'total'</span>]</span><br></pre></td></tr></table></figure>
+<li>评论数。你在doc中找不到，它在js中，而且还需要用json模块将数据变成我们容易处理的字典。<br>具体代码如下：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">title = soup.select(<span class="string">'.main-title'</span>)[<span class="number">0</span>].text</span><br><span class="line">date = soup.select(<span class="string">'.date-source'</span>)[<span class="number">0</span>].contents[<span class="number">1</span>].text</span><br><span class="line">dt = datetime.strptime(date,<span class="string">'%Y年%m月%d日 %H:%M'</span>)</span><br><span class="line">source = soup.select(<span class="string">'.date-source a '</span>)[<span class="number">0</span>].text</span><br><span class="line">body = soup.select(<span class="string">'.article p'</span>)[:<span class="number">-1</span>]</span><br><span class="line">article = <span class="string">'\n'</span>.join([d.text.strip() <span class="keyword">for</span> d <span class="keyword">in</span> body])</span><br><span class="line">mport json</span><br><span class="line">comment = requests.get(<span class="string">'http://comment5.news.sina.com.cn/page/info?version=1&amp;format=json&amp;\</span></span><br><span class="line"><span class="string">channel=gn&amp;newsid=comos-fyqyesy2133291&amp;\</span></span><br><span class="line"><span class="string">group=undefined&amp;compress=0&amp;ie=utf-8&amp;oe=utf-8&amp;page=1&amp;page_size=3&amp;t_size=3&amp;\</span></span><br><span class="line"><span class="string">h_size=3&amp;thread=1&amp;callback=jsonp_1516947697495&amp;_=1516947697495'</span>)</span><br><span class="line">jd = json.loads(comment.text.lstrip(<span class="string">'jsonp_1516947697495('</span>).rstrip(<span class="string">')'</span>))</span><br><span class="line">jd[<span class="string">'result'</span>][<span class="string">'count'</span>][<span class="string">'total'</span>]</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>评论数的获取页面链接中包含新闻<strong>id</strong>，在新闻本身的页面链接能找到。将它独立取出的方法有两个：</p>
@@ -1944,167 +2147,6 @@
 <p><strong>parserlist</strong>函数唯一的输入参数就是那个<strong>js</strong>中的网页连接（管理着一个页面的的所有新闻链接）</p>
 <p>但是问题又来了，我们的分页可不止一个，所以我们继续观察分页的网页链接，发现page={数字}表示页数，那么我们可以写一个函数继续扩大工作量。代码如下：<br><figure class="highlight coq"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">url = 'http://api.roll.news.sina.com.cn/zt_list?channel=news&amp;cat_1=gnxw&amp;cat_2==gdxw1|<span class="type">|=gatxw</span>|<span class="type">|=zs</span>-pl|<span class="type">|=mtjj</span>&amp;level==<span class="number">1</span>|<span class="type">|=2</span>&amp;show_ext=<span class="number">1</span>&amp;show_all=<span class="number">1</span>&amp;show_num=<span class="number">22</span>&amp;tag=<span class="number">1</span>&amp;format=json&amp;page=&#123;&#125;&amp;callback=newsloadercallback&amp;<span class="keyword">_</span>=<span class="number">1516960730249</span>'</span><br><span class="line">final = []</span><br><span class="line"><span class="keyword">for</span> i <span class="built_in">in</span> range(<span class="number">1</span>,<span class="number">10</span>):</span><br><span class="line">    newser = parserlist(url.format(i))</span><br><span class="line">    final.extend(newser)</span><br></pre></td></tr></table></figure></p>
 <p>最终的<strong>final</strong>就是我们要的9个页面的所有新闻内文。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-	<div>
-	    
-	</div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/25/python爬虫/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Girlden">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/me.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Girlden's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/01/25/python爬虫/" itemprop="url">python爬虫（1）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-25T12:07:52+08:00">
-                2018-01-25
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2018-01-26T00:51:07+08:00">
-                2018-01-26
-              </time>
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/01/25/python爬虫/" class="leancloud_visitors" data-flag-title="python爬虫（1）">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>今天来简单的学习一下爬取网页的文档，然后归档。</p>
-<h1 id="第一个简单的爬虫"><a href="#第一个简单的爬虫" class="headerlink" title="第一个简单的爬虫"></a>第一个简单的爬虫</h1><p>利用<strong>chrome F12</strong>的检查功能对网页的回应进行读取，这里以新浪网为例。</p>
-<p><img src="https://i.imgur.com/HIf2TXK.png" alt=""></p>
-<p><img src="https://i.imgur.com/5xFFPul.png" alt=""></p>
-<p>获取到这些信息后，我们就能够写出一下代码：<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">new_url = 'http:<span class="comment">//news.sina.com.cn/society/</span></span><br><span class="line">res = requests.<span class="keyword">get</span>(new_url)</span><br><span class="line">res.encoding = 'utf-<span class="number">8</span>'</span><br><span class="line"><span class="built_in">print</span>(res.text)</span><br></pre></td></tr></table></figure></p>
-<p>打印出来后表明没有问题，这是可以用到BeautifulSoup这个模块，讲刚才打印出来的东西丢进去，交给它处理，注意还需标明剖析器是html.parser。</p>
-<figure class="highlight xl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">from bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line">soup = BeautifulSoup(res.<span class="keyword">text</span>,<span class="string">'html.parser'</span>)</span><br></pre></td></tr></table></figure>
-<p>我们可以知道，在res里有很多的标签，我们需要的文字藏在固定的标签中，所以我们下面要做的就是取出我们需要的标签，需要用到soup的select方法。</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">soup2 = soup.select(<span class="string">'h2'</span>)</span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(soup2)</span></span></span><br></pre></td></tr></table></figure>
-<p>结果如下，是一个列表。<br><img src="https://i.imgur.com/nYTzwP3.png" alt=""></p>
-<p>但是我们要爬取的内容的标签是以不同的id和class来区分的，这里涉及到css的相关内容，我们暂且不谈。只需要知道我们需要通过网页的<strong>检查</strong>了解我们的新闻藏在什么杨种类的标签之下。</p>
-<p><img src="https://i.imgur.com/W7x0Sz2.png" alt=""></p>
-<p>现在可以知道我们的内容在news-item的class之下，所以我们运用select(‘.news-item’)的方法去获取，同样的方法，我们又可以知道，新闻的标题在<strong>h标签下</strong>，新闻的时间在<strong>值time的class之下</strong>，链接在<strong>h2标签的href中</strong>，写出一下代码。<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">from bs4 import BeautifulSoup</span><br><span class="line">soup = BeautifulSoup(res<span class="selector-class">.text</span>,<span class="string">'html.parser'</span>)</span><br><span class="line"><span class="keyword">for</span> link <span class="keyword">in</span> soup.select(<span class="string">'.news-item'</span>):</span><br><span class="line">    <span class="keyword">if</span> len(link.select(<span class="string">'h2'</span>)) &gt; <span class="number">0</span>:</span><br><span class="line">        <span class="selector-tag">h2</span> = link.select(<span class="string">'h2'</span>)[<span class="number">0</span>].text</span><br><span class="line">        <span class="selector-tag">time</span> = link.select(<span class="string">'.time'</span>)[<span class="number">0</span>].text</span><br><span class="line">        href = link.select(<span class="string">'a'</span>)[<span class="number">0</span>][<span class="string">'href'</span>]</span><br><span class="line">        print(<span class="selector-tag">time</span>,<span class="selector-tag">h2</span>,href)</span><br></pre></td></tr></table></figure></p>
-<p><strong>注：text取的是标签的文字内容，而[‘href’]取的是标签内部的值。</strong></p>
-<p>最终结果如下：</p>
-<p><img src="https://i.imgur.com/pjSMwDJ.png" alt=""></p>
 
           
         
@@ -2197,7 +2239,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2219,7 +2261,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

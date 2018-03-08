@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[python3和Python2的区别]]></title>
+    <url>%2F2018%2F03%2F08%2Fpython3%E5%92%8CPython2%E7%9A%84%E5%8C%BA%E5%88%AB%2F</url>
+    <content type="text"><![CDATA[小编在学习apriori算法的时候，发现了一些Python两种版本的差别，虽然不大，但是还是记下来比较好，万一以后要用也好找，毕竟python3在未来还是会取代python2的，但是学习的时候还是python2比较稳定。 字典dict的has_key()python3中已经不用这个方法了。1234567dict_1 = &#123;k:'g', e:'h', y:'j'&#125;#对于py2if dict_1.has_key(k):#对于py3if k in dict_1: 内建函数map()py3中无法返回list12345#py2中直接返回listlen(map对象)#py3需要进行一次转换len(list(map对象)) 2018/3/8 13:35:12]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>python版本区别</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[数据库与数据对象]]></title>
     <url>%2F2018%2F03%2F02%2F%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E6%93%8D%E4%BD%9C%2F</url>
     <content type="text"><![CDATA[创建和维护数据库数据库中的一些概念之间的关系如以下的思维导图： 创建数据库创建数据库需要注意一下的几个步骤： 注明数据库的名称。 看清有几个数据文件，日志文件。 数据文件是否需要有文件组的安排。 初始化文件的各种属性。 1234567891011121314151617181920212223CREATE DATABASE 数据库名称ON PRIMARY (NAME = 逻辑文件名 FILENAME = 物理文件名 SIZE = 初始大小 MAXSIZE = 最大大小 FILEGROWTH = 增长 )FILEGROUP 用户自定义的文件组名 (NAME = 逻辑文件名 FILENAME = 物理文件名 SIZE = 初始大小 MAXSIZE = 最大大小 FILEGROWTH = 增长 )LOG ON (NAME = 逻辑文件名 FILENAME = 物理文件名 SIZE = 初始大小 MAXSIZE = 最大大小 FILEGROWTH = 增长 ) 修改数据库扩大数据库空间如果没有设置数据库自动增长的话，那么数据库在使用一段时间后会出现空间不够的情况，那么就可以通过修改数据库空间来解决。 扩大数据库空间有两个方法： 扩大已有文件的大小。 数据库添加新的文件。 123456789101112ALTER DATABASE 数据库的名称#ADD FILE (NAME = 逻辑文件名 FILENAME = 物理文件名 SIZE = 初始大小 MAXSIZE = 最大大小 FILEGROWTH = 增长 )#MODIFY FILE (NAME = 逻辑文件名 SIZE = 初始大小 ) 注意：增加文件还可以讲文件添加到指定的文件组组中。 收缩数据文件释放文件中未使用的空间，并将此空间还给系统空间，数据文件和日志文件都可以收缩。收缩的方法有： 手动收缩 设置数据库参数自动收缩 手动收缩 收缩整个数据库的大小。 1234DBBC SHRINKDATABASE (数据库名称或者ID， 大小比例, NOTRUNCATE或者TRUNCATEONLY) #要么把空间给系统，要么不保留 收缩指定文件的大小 12345DBBC SHRINKDATABASE (数据库名称或者ID， 大小比例, EMPTYFILE, #该文件为空，将原有文件转移到同一文件组的其他文件中。 NOTRUNCATE或者TRUNCATEONLY) 自动收缩就是简单的将数据库的AUTO_SHRINK设置为True，默认情况下是False。 添加和删除数据库文件可以通过在数据库中添加文件来扩大数据库的大小，也可以通过删除数据库的文件来减小数据库的大小。 添加文件组中各个文件的数据量大小就是和和文件的可用空间成正比，所以添加数据文件的时候数据库会先使用新加的文件。相比之下，日志文件就不会这样，由于文件不存在文件组，所以文件之间是彼此独立，总是先写第一个日志文件，当填充满了以后再写第二个，所以，当添加日志文件的时候不会立刻使用该文件，直到其他文件被填满。 删除只有当文件完全为空的时候，才能够删除。日志文件比较复杂，需要截断日志或者备份日志才可以。12ALTER DATABASE 数据库名称 REMOVE FILE 文件名 分离和附加数据库]]></content>

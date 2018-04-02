@@ -337,6 +337,184 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/02/面经demo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Girlden">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/me.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Girlden's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/02/面经demo/" itemprop="url">面经demo</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-02T09:12:03+08:00">
+                2018-04-02
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-04-02T10:44:46+08:00">
+                2018-04-02
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/春招/" itemprop="url" rel="index">
+                    <span itemprop="name">春招</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/04/02/面经demo/" class="leancloud_visitors" data-flag-title="面经demo">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在ppv网上发现一篇帖子，专门是对付数据分析面试的，我呢觉得自己也该准备一些面试的东西了，哪怕自己练面试的机会也没有。</p>
+<h3 id="1、你处理过的最大的数据量？你是如何处理他们的？处理的结果"><a href="#1、你处理过的最大的数据量？你是如何处理他们的？处理的结果" class="headerlink" title="1、你处理过的最大的数据量？你是如何处理他们的？处理的结果"></a>1、你处理过的最大的数据量？你是如何处理他们的？处理的结果</h3><p>我处理过最大的数据量有88万条记录，用CSV文件储存的，大小是400M左右。内容是关于借贷的，来源与Kaggle。</p>
+<ul>
+<li>导入：我开始尝试用Excel打开，发现那是‘一项浩大的工程’，所有我用Python的第三方库Pandas的read_csv命令打开的，也花了不到一分钟的时间。而且对数据的格式也进行了限制。</li>
+<li>数据探索：通过Python的describe()和数据的指标字典文件，对有用的变量我进行了筛选，删除了用户ID等对评定借贷人信用不会有影响的字段。</li>
+<li>数据缺省值处理：我删除了缺省记录超过80%的字段。对于缺省较少的，如果是字串我就用采用前一个记录的值补上，如果是数值我就用众数。</li>
+<li>数据重复值处理：文件里有些字段记录的重复率很高，那么我选择删除。<br>最后得到可以运用于logistic模型</li>
+</ul>
+<h3 id="2、告诉我二个分析或者计算机科学相关项目？你是如何对其结果进行衡量的？"><a href="#2、告诉我二个分析或者计算机科学相关项目？你是如何对其结果进行衡量的？" class="headerlink" title="2、告诉我二个分析或者计算机科学相关项目？你是如何对其结果进行衡量的？"></a>2、告诉我二个分析或者计算机科学相关项目？你是如何对其结果进行衡量的？</h3><p>我有一个用户评分卡模型，这是一个分类的项目，评定用户信用度的，因为是一个二分类，所有我选择的是ROC曲线和AUC值来评定的。将测试集中的目标变量的值和预测值进行对比，计算出不同阈值下的真阳率和假阳率绘制ROC，并且根据ROC计算。</p>
+<h3 id="3、什么是：提升值、关键绩效指标、强壮性、模型按合度、实验设计、2-8原则？"><a href="#3、什么是：提升值、关键绩效指标、强壮性、模型按合度、实验设计、2-8原则？" class="headerlink" title="3、什么是：提升值、关键绩效指标、强壮性、模型按合度、实验设计、2/8原则？"></a>3、什么是：提升值、关键绩效指标、强壮性、模型按合度、实验设计、2/8原则？</h3><p>提升值是：在原有的数值上数值上增加的数值。<br>关键绩效指标：从对象的关键成果中提取的指标，用以衡量对象的绩效。<br>强壮性：软件或者系统对于规定输入范围以外情况的处理能力。<br>模型的拟合度：是预测的数据与实际的吻合度。<br>实验设计：一种安排实验和实验数据的数理统计方法。<br>2/8原则：重要的都是少数，而占多数的往往都是次要的。</p>
+<h3 id="4、什么是：协同过滤、n-grams-map-reduce、余弦距离？"><a href="#4、什么是：协同过滤、n-grams-map-reduce、余弦距离？" class="headerlink" title="4、什么是：协同过滤、n-grams, map reduce、余弦距离？"></a>4、什么是：协同过滤、n-grams, map reduce、余弦距离？</h3><p>协同过滤：是一种推荐算法，利用</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+	<div>
+	    
+	</div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/31/面试/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1999,179 +2177,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/26/python爬虫（3）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Girlden">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/me.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Girlden's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/01/26/python爬虫（3）/" itemprop="url">python爬虫（3）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-26T22:25:49+08:00">
-                2018-01-26
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2018-03-07T18:51:08+08:00">
-                2018-03-07
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/python/" itemprop="url" rel="index">
-                    <span itemprop="name">python</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/01/26/python爬虫（3）/" class="leancloud_visitors" data-flag-title="python爬虫（3）">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>之前的两节，我们把我们要的东西爬取下来，但是并没有做存储，下面我们将会讲解如何做存储。</p>
-<h2 id="保存到Excel"><a href="#保存到Excel" class="headerlink" title="保存到Excel"></a>保存到Excel</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas</span><br><span class="line">df = pandas.DataFrame(final)</span><br><span class="line">df.to_excel(<span class="string">'news.xlsx'</span>)</span><br></pre></td></tr></table></figure>
-<p>这是就可以在我们的目录当中找到news.xlsx的文件。</p>
-<h2 id="保存到数据库"><a href="#保存到数据库" class="headerlink" title="保存到数据库"></a>保存到数据库</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sqlite3</span><br><span class="line"><span class="keyword">with</span> sqlite3.connect(<span class="string">'news.sqlite'</span>) <span class="keyword">as</span> db:</span><br><span class="line">    df.to_sql(<span class="string">'news'</span>,con = db)</span><br></pre></td></tr></table></figure>
-<p>可以利用pandas去sqlite中拿数据：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> sqlite3.connect(<span class="string">'news.sqlite'</span>) <span class="keyword">as</span> db:</span><br><span class="line">    df2 = pandas.read_sql(<span class="string">'SELECT * FROM news'</span>,con = db)</span><br></pre></td></tr></table></figure></p>
-<p>连上钱两次，就算是一个完整的爬虫过程了。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-	<div>
-	    
-	</div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2226,7 +2231,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2237,7 +2242,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -2248,7 +2253,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

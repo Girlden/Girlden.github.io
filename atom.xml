@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-31T02:48:51.347Z</updated>
+  <updated>2018-04-02T02:44:46.266Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>面经demo</title>
+    <link href="http://yoursite.com/2018/04/02/%E9%9D%A2%E7%BB%8Fdemo/"/>
+    <id>http://yoursite.com/2018/04/02/面经demo/</id>
+    <published>2018-04-02T01:12:03.000Z</published>
+    <updated>2018-04-02T02:44:46.266Z</updated>
+    
+    <content type="html"><![CDATA[<p>在ppv网上发现一篇帖子，专门是对付数据分析面试的，我呢觉得自己也该准备一些面试的东西了，哪怕自己练面试的机会也没有。</p><h3 id="1、你处理过的最大的数据量？你是如何处理他们的？处理的结果"><a href="#1、你处理过的最大的数据量？你是如何处理他们的？处理的结果" class="headerlink" title="1、你处理过的最大的数据量？你是如何处理他们的？处理的结果"></a>1、你处理过的最大的数据量？你是如何处理他们的？处理的结果</h3><p>我处理过最大的数据量有88万条记录，用CSV文件储存的，大小是400M左右。内容是关于借贷的，来源与Kaggle。</p><ul><li>导入：我开始尝试用Excel打开，发现那是‘一项浩大的工程’，所有我用Python的第三方库Pandas的read_csv命令打开的，也花了不到一分钟的时间。而且对数据的格式也进行了限制。</li><li>数据探索：通过Python的describe()和数据的指标字典文件，对有用的变量我进行了筛选，删除了用户ID等对评定借贷人信用不会有影响的字段。</li><li>数据缺省值处理：我删除了缺省记录超过80%的字段。对于缺省较少的，如果是字串我就用采用前一个记录的值补上，如果是数值我就用众数。</li><li>数据重复值处理：文件里有些字段记录的重复率很高，那么我选择删除。<br>最后得到可以运用于logistic模型</li></ul><h3 id="2、告诉我二个分析或者计算机科学相关项目？你是如何对其结果进行衡量的？"><a href="#2、告诉我二个分析或者计算机科学相关项目？你是如何对其结果进行衡量的？" class="headerlink" title="2、告诉我二个分析或者计算机科学相关项目？你是如何对其结果进行衡量的？"></a>2、告诉我二个分析或者计算机科学相关项目？你是如何对其结果进行衡量的？</h3><p>我有一个用户评分卡模型，这是一个分类的项目，评定用户信用度的，因为是一个二分类，所有我选择的是ROC曲线和AUC值来评定的。将测试集中的目标变量的值和预测值进行对比，计算出不同阈值下的真阳率和假阳率绘制ROC，并且根据ROC计算。</p><h3 id="3、什么是：提升值、关键绩效指标、强壮性、模型按合度、实验设计、2-8原则？"><a href="#3、什么是：提升值、关键绩效指标、强壮性、模型按合度、实验设计、2-8原则？" class="headerlink" title="3、什么是：提升值、关键绩效指标、强壮性、模型按合度、实验设计、2/8原则？"></a>3、什么是：提升值、关键绩效指标、强壮性、模型按合度、实验设计、2/8原则？</h3><p>提升值是：在原有的数值上数值上增加的数值。<br>关键绩效指标：从对象的关键成果中提取的指标，用以衡量对象的绩效。<br>强壮性：软件或者系统对于规定输入范围以外情况的处理能力。<br>模型的拟合度：是预测的数据与实际的吻合度。<br>实验设计：一种安排实验和实验数据的数理统计方法。<br>2/8原则：重要的都是少数，而占多数的往往都是次要的。</p><h3 id="4、什么是：协同过滤、n-grams-map-reduce、余弦距离？"><a href="#4、什么是：协同过滤、n-grams-map-reduce、余弦距离？" class="headerlink" title="4、什么是：协同过滤、n-grams, map reduce、余弦距离？"></a>4、什么是：协同过滤、n-grams, map reduce、余弦距离？</h3><p>协同过滤：是一种推荐算法，利用</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;在ppv网上发现一篇帖子，专门是对付数据分析面试的，我呢觉得自己也该准备一些面试的东西了，哪怕自己练面试的机会也没有。&lt;/p&gt;
+&lt;h3 id=&quot;1、你处理过的最大的数据量？你是如何处理他们的？处理的结果&quot;&gt;&lt;a href=&quot;#1、你处理过的最大的数据量？你是如何处理他们的？
+      
+    
+    </summary>
+    
+      <category term="春招" scheme="http://yoursite.com/categories/%E6%98%A5%E6%8B%9B/"/>
+    
+    
+      <category term="数据分析" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    
+      <category term="面经" scheme="http://yoursite.com/tags/%E9%9D%A2%E7%BB%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>数据分析师的面试准备</title>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-04-02T02:44:46.266Z</updated>
+  <updated>2018-04-04T06:20:35.441Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数据分析：产品经理的基础</title>
+    <link href="http://yoursite.com/2018/04/04/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E7%9A%84%E5%9F%BA%E7%A1%80/"/>
+    <id>http://yoursite.com/2018/04/04/产品经理的基础/</id>
+    <published>2018-04-04T02:13:01.000Z</published>
+    <updated>2018-04-04T06:20:35.441Z</updated>
+    
+    <content type="html"><![CDATA[<p>在腾讯鹅产我谈会的鼓励下，我想好好准备我的面试（虽然我还没过笔试），选择的方式就是在<a href="http://www.woshipm.com/" target="_blank" rel="noopener">人人都是产品经理</a>这个网站上，我说实话自己离自己的梦想的距离还是非常远的，索性在为自己到处都是不足而焦虑，不如务实一点，做点自己觉得有意思的事。</p><h1 id="埋点"><a href="#埋点" class="headerlink" title="埋点"></a>埋点</h1><p>这个概念似乎在之前有听过，是学网站运营的时候，看到的。<br>解释是这样的：根据业务需求、产品需求去在网页上设计埋点，记录数据，再通过软件工具把数据提取出来，用于专业人员的数据分析，驱动产品的优化，迭代。</p><p>大致的过程是：</p><h2 id="When"><a href="#When" class="headerlink" title="When"></a>When</h2><p>1、了解业务的各方面要求。</p><ul><li>在什么场景下？</li><li>面对哪些客户？</li><li>解决什么问题？</li><li>解决的程度？（能给到多少价值）</li></ul><p>2、具体讨论问题的轻重缓急。<br>3、将抽象的问题进行量化。</p><ul><li>给定量化指标</li><li>评价体系指标</li></ul><p>这些都解决完了就能够进行埋点了。</p><h2 id="How"><a href="#How" class="headerlink" title="How"></a>How</h2><p>为了便于后期的维护，降低推翻重来的可能性，就要按照规范埋点。<br>简单的埋点规则就是将一个事件分成分成三个表：点击事件集合，曝光事件集合，用户停留时间事件集合。再对这三张表分别三个表单：首页事件，列表页事件，详情事件。如果版本更新就该把之前的埋点进行copy，再用颜色标明两个之间大的变化。</p><p>关于埋点的细节：</p><h3 id="功能名称"><a href="#功能名称" class="headerlink" title="功能名称"></a>功能名称</h3><p>解释在什么页面下的什么功能。</p><h3 id="中文字段名称"><a href="#中文字段名称" class="headerlink" title="中文字段名称"></a>中文字段名称</h3><p>解释在什么功能模块的什么位置上。</p><h3 id="ID"><a href="#ID" class="headerlink" title="ID"></a>ID</h3><p>数据的主键，往往是按照一定的规则的。</p><h3 id="事件类型"><a href="#事件类型" class="headerlink" title="事件类型"></a>事件类型</h3><p>点击还是曝光，还是其他</p><h3 id="Key——value"><a href="#Key——value" class="headerlink" title="Key——value"></a>Key——value</h3><p>对于不同类型的不同位置，需要设置，可以一对一和一对多。</p><h3 id="规则表述"><a href="#规则表述" class="headerlink" title="规则表述"></a>规则表述</h3><p>对具体的时间规则进行描述。</p><h3 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h3><p>每一次改动都应该有所记录。</p><p>以上可以算是对埋点有了一个初步的认知。<br>接下来我再来深入Key—value的讲解。</p><hr><h2 id="Key——value详解"><a href="#Key——value详解" class="headerlink" title="Key——value详解"></a>Key——value详解</h2><p>设这样一一个场景：某汽车互联网公司，领导需要产品经理对<strong>销售线索指标</strong>进行监控，如果有超过5%的<strong>波动</strong>，就进行数据值的记录和汇报。</p><p>根据领导的需求，假设<strong>销售线索指标</strong>里<strong>电话咨询</strong>和<strong>电话砍价</strong>这两个行为字段比较关键，对于它们的检测可以通过详情页面的两个按钮。<br>转到详情页面的来源假设有两个，<strong>页面A</strong>和<strong>页面B</strong>。</p><p>一般设置Key——value有两个方式。</p><ul><li>每一个事件都设置一个ID。</li><li>同一属性的不同事件可以设置同一个Key，然后不同时间用value去区分。</li></ul><p><strong>如果是每一个都去设置一个ID，那么我想说的是一下缺点:</strong></p><ul><li>来源和按钮（行为）如果增加的话，存的的量是很大的。</li><li>数据分析的时候去取数据，写SQL查询语句的时候，ID值需要写很多。</li></ul><p>这样会徒增很多的工作量。</p><p><strong>利用Key——value来区分事件</strong>：<br>把事件分成<strong>来源</strong>和<strong>类型</strong>两个键值，就能很大程度上去把数据进行<strong>分类</strong>，方便日后的查询、使用和维护。</p><p>得到两个结论：</p><ul><li>同种属性的多个事件，建议设一个ID，并通通过Key——value进行区分。</li><li>不同属性的多个事件，设置不同的ID,不建议使用Key——value。</li></ul><h1 id="统计基础"><a href="#统计基础" class="headerlink" title="统计基础"></a>统计基础</h1><p>我们首先要树立一个意识，就是我们在实际应用中的研究的对象总体往往数据量很大，我们不可能研究<strong>总体</strong>，统计学中就有了一个方法，用<strong>样本</strong>来估计总体。</p><p>这里可以用辛钦大数定律来解释，当有一个<strong>样本集</strong>是一个随机变量序列，每个随机变量都是<strong>独立同分布</strong>的，自然能想到能否通过这些样本去研究总体的一些特征？</p><p>答案当然是肯定的，当样本的数据量增多时，样本的均值接近总体概率的会越来越来大。</p><p>以上就是为什么可以<strong>用样本数据去研究总体数据</strong>的原因了。</p><h2 id="均值"><a href="#均值" class="headerlink" title="均值"></a>均值</h2><p>均值可以衡量一个数据集在某一个<strong>数值型</strong>字段上的水平.<br>但是有的时候数据中有异常值的时候,平均值的评价效果大大降低,即大部分的数据都低于平均值或高于平均值,这就出现了右偏和左偏的数据:</p><ul><li>右偏就是因为异常值太大,将均值往右边拉.</li><li>左偏就是因为异常值太小,将均值往左边拉.</li></ul><p>我们预期的数据都是正态的,所以这个时候要么选用其他的观测量,要么就是去异常值.</p><h2 id="中位数"><a href="#中位数" class="headerlink" title="中位数"></a>中位数</h2><p>中位数就是一个可以克服异常值的观测变量.同时还有四分位数.</p><p>2018/4/4 14:20:31 </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;在腾讯鹅产我谈会的鼓励下，我想好好准备我的面试（虽然我还没过笔试），选择的方式就是在&lt;a href=&quot;http://www.woshipm.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;人人都是产品经理&lt;/a&gt;这个网站上，我说实话自己离自己的梦想
+      
+    
+    </summary>
+    
+      <category term="产品" scheme="http://yoursite.com/categories/%E4%BA%A7%E5%93%81/"/>
+    
+    
+      <category term="数据分析" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    
+  </entry>
   
   <entry>
     <title>面经demo</title>
